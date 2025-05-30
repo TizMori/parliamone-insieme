@@ -4,7 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tiziana Mori | Parliamone Insieme</title>
+    
+    <!-- FONT ESSENZIALI -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+    
+    <!-- COLLEGAMENTO AL CSS -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -17,11 +22,11 @@
         </div>
     </div>
 
-    <!-- Pagina principale (nascosta inizialmente) -->
+    <!-- Pagina principale -->
     <div class="container hidden">
         <header>
             <div class="profile-header">
-                <img src="assets/foto-profilo.jpg" alt="Tiziana Mori" class="profile-img">
+                <img src="assets/tiziana-mori.jpg" alt="Tiziana Mori" class="profile-img">
                 <h1>Tiziana Mori</h1>
                 <p class="tagline">Costruire futuro con radici umane</p>
             </div>
@@ -37,29 +42,59 @@
         </nav>
 
         <section id="anima">
-            <!-- Contenuto sezione -->
+            <div class="section-content">
+                <h2>La mia essenza</h2>
+                <p>Politica come servizio, innovazione come strumento di uguaglianza, cooperazione come linguaggio universale.</p>
+                <blockquote>"Agire non significa solo muoversi, ma muovere coscienze"</blockquote>
+            </div>
         </section>
 
         <section id="azioni">
-            <!-- Contenuto sezione -->
+            <div class="section-content">
+                <h2>Il mio percorso</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-year">2010-oggi</div>
+                        <div class="timeline-content">
+                            <h4>Responsabile COOPI Sardegna</h4>
+                            <p>Coordinamento progetti umanitari in 23 paesi.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-year">2019-2022</div>
+                        <div class="timeline-content">
+                            <h4>Assessore a Monserrato</h4>
+                            <p>Gestione politiche lavoro e casa durante la pandemia.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="visioni">
-            <!-- Contenuto sezione -->
+            <div class="section-content">
+                <h2>Progetti futuri</h2>
+                <p>Sviluppo di modelli di cooperazione euro-africana e piattaforme di welfare digitale.</p>
+            </div>
         </section>
 
         <section id="dialogo">
-            <!-- Contenuto sezione -->
+            <div class="cta-box">
+                <h3>Costruiamo dialogo</h3>
+                <div class="email-box">
+                    <a href="mailto:contatti.parliamone.insieme@gmail.com">contatti.parliamone.insieme@gmail.com</a>
+                </div>
+                <p class="small">Ogni messaggio sarà letto personalmente</p>
+            </div>
         </section>
 
         <footer>
-            <img src="assets/firma-digitalizzata.png" alt="Firma Tiziana" class="signature">
-            <p>info@parliamoneinsieme.it | © 2025 Cuore e Governo</p>
+            <p class="handwritten-signature">Tiziana Mori</p>
+            <p>contatti.parliamone.insieme@gmail.com | © 2025 Cuore e Governo</p>
         </footer>
     </div>
 
     <script>
-        // Script per transizione overlay
         document.querySelector('.enter-btn').addEventListener('click', function() {
             document.querySelector('.overlay').classList.add('fade-out');
             setTimeout(() => {
