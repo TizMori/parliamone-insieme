@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tiziana Mori | Parliamone Insieme</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@0;1&family=Lora:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Overlay iniziale con citazione -->
+    <div class="overlay">
+        <div class="quote-box">
+            <p class="poesia">"Non si può governare il vento,<br>ma si possono aggiustare le vele"</p>
+            <p class="author">- Proverbio orientale -</p>
+            <button class="enter-btn">Entra nel mio mondo</button>
+        </div>
+    </div>
+
+    <!-- Pagina principale (nascosta inizialmente) -->
+    <div class="container hidden">
+        <header>
+            <div class="profile-header">
+                <img src="assets/foto-profilo.jpg" alt="Tiziana Mori" class="profile-img">
+                <h1>Tiziana Mori</h1>
+                <p class="tagline">Costruire futuro con radici umane</p>
+            </div>
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="#anima">La mia anima</a></li>
+                <li><a href="#azioni">Azioni concrete</a></li>
+                <li><a href="#visioni">Visioni future</a></li>
+                <li><a href="#dialogo">Dialoghiamo</a></li>
+            </ul>
+        </nav>
+
+        <section id="anima">
+            <!-- Contenuto sezione -->
+        </section>
+
+        <section id="azioni">
+            <!-- Contenuto sezione -->
+        </section>
+
+        <section id="visioni">
+            <!-- Contenuto sezione -->
+        </section>
+
+        <section id="dialogo">
+            <!-- Contenuto sezione -->
+        </section>
+
+        <footer>
+            <img src="assets/firma-digitalizzata.png" alt="Firma Tiziana" class="signature">
+            <p>info@parliamoneinsieme.it | © 2025 Cuore e Governo</p>
+        </footer>
+    </div>
+
+    <script>
+        // Script per transizione overlay
+        document.querySelector('.enter-btn').addEventListener('click', function() {
+            document.querySelector('.overlay').classList.add('fade-out');
+            setTimeout(() => {
+                document.querySelector('.overlay').style.display = 'none';
+                document.querySelector('.container').classList.remove('hidden');
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
