@@ -1,0 +1,99 @@
+:root {
+    --primary: #7E57C2;
+    --secondary: #D4A5A5;
+    --light: #F8F5F2;
+}
+
+body {
+    font-family: 'Lora', serif;
+    line-height: 1.8;
+    color: #333;
+    background-color: var(--light);
+    background-image: url('assets/sfondo-texture.png');
+    background-size: cover;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(126, 87, 194, 0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: opacity 1s ease;
+}
+
+.quote-box {
+    text-align: center;
+    padding: 2rem;
+    max-width: 600px;
+}
+
+.poesia {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.5rem;
+    font-style: italic;
+    color: white;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.enter-btn {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    margin-top: 2rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.enter-btn:hover {
+    background: white;
+    color: var(--primary);
+}
+
+/* Sezione profilo */
+.profile-header {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.profile-img {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid var(--secondary);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.tagline {
+    font-style: italic;
+    color: var(--primary);
+    font-size: 1.2rem;
+    margin-top: 1rem;
+}
+
+/* Altre sezioni */
+section {
+    padding: 4rem 2rem;
+    border-bottom: 1px dashed var(--secondary);
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 3rem 0;
+}
+
+.signature {
+    height: 60px;
+    opacity: 0.7;
+    margin-bottom: 1rem;
+}
