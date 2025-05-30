@@ -1,7 +1,7 @@
 :root {
-    --primary: #7E57C2;
-    --secondary: #D4A5A5;
-    --light: #F8F5F2;
+    --primary: #5d6bb0;
+    --secondary: #b76e79;
+    --light: #f8f9fc;
 }
 
 body {
@@ -9,7 +9,7 @@ body {
     line-height: 1.8;
     color: #333;
     background-color: var(--light);
-        background-image: url('https://www.transparenttextures.com/patterns/soft-circle-scales.png');
+    background-image: url('https://www.transparenttextures.com/patterns/soft-circle-scales.png');
     background-size: cover;
 }
 
@@ -19,7 +19,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(93, 107, 176, 0.97); /* NUOVO COLORE BLU-VIOLA SOBRIO */
+    background: rgba(93, 107, 176, 0.97);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -31,17 +31,17 @@ body {
     text-align: center;
     padding: 2rem;
     max-width: 600px;
-    background: rgba(255, 255, 255, 0.1); /* LEGGERO SFUMATURA BIANCA */
+    background: rgba(255, 255, 255, 0.1);
     border-radius: 12px;
-    backdrop-filter: blur(5px); /* EFFETTO VETRO SBIADITO */
+    backdrop-filter: blur(5px);
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .poesia {
     font-family: 'Playfair Display', serif;
-    font-size: 2.3rem; /* LEGGERMENTE PIÙ PICCOLO */
+    font-size: 2.3rem;
     font-style: italic;
-    color: #f0f0f0; /* BIANCO SPORCO PIÙ SOBRIO */
+    color: #f0f0f0;
     margin-bottom: 1.5rem;
     line-height: 1.4;
     text-shadow: 0 2px 4px rgba(0,0,0,0.2);
@@ -56,7 +56,7 @@ body {
     margin-top: 2rem;
     cursor: pointer;
     transition: all 0.4s;
-    border-radius: 30px; /* BORDI ARROTONDATI */
+    border-radius: 30px;
 }
 
 .enter-btn:hover {
@@ -64,38 +64,6 @@ body {
     transform: translateY(-3px);
 }
 
-.quote-box {
-    text-align: center;
-    padding: 2rem;
-    max-width: 600px;
-}
-
-.poesia {
-    font-family: 'Playfair Display', serif;
-    font-size: 2.5rem;
-    font-style: italic;
-    color: white;
-    margin-bottom: 1rem;
-    line-height: 1.4;
-}
-
-.enter-btn {
-    background: transparent;
-    border: 2px solid white;
-    color: white;
-    padding: 12px 30px;
-    font-size: 1.1rem;
-    margin-top: 2rem;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.enter-btn:hover {
-    background: white;
-    color: var(--primary);
-}
-
-/* Sezione profilo */
 .profile-header {
     text-align: center;
     padding: 3rem 0;
@@ -117,27 +85,121 @@ body {
     margin-top: 1rem;
 }
 
-/* Altre sezioni */
 section {
     padding: 4rem 2rem;
     border-bottom: 1px dashed var(--secondary);
 }
 
-/* Footer */
 footer {
     text-align: center;
     padding: 3rem 0;
 }
 
-/* FIRMA MANO SCRITTA */
 .handwritten-signature {
     font-family: 'Dancing Script', cursive;
     font-size: 3rem;
-    color: #5d6bb0;
+    color: var(--primary);
     text-align: center;
     margin: 1rem 0;
     font-weight: 700;
 }
 
-/* Aggiungi questo nel <head> di index.html */
-<link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+.hidden { display: none; }
+.fade-out { opacity: 0; }
+
+.columns {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.col {
+  flex: 1;
+  min-width: 250px;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 30px;
+  margin-top: 2rem;
+}
+
+.timeline:before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 0;
+  height: 100%;
+  width: 2px;
+  background: var(--secondary);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2.5rem;
+}
+
+.timeline-year {
+  position: absolute;
+  left: -30px;
+  top: 0;
+  background: var(--primary);
+  color: white;
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  font-weight: bold;
+}
+
+.timeline-content {
+  background: rgba(255,255,255,0.7);
+  padding: 1rem;
+  border-radius: 8px;
+  border-left: 3px solid var(--primary);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.cta-box {
+  text-align: center;
+  padding: 2rem;
+  background: rgba(126, 87, 194, 0.08);
+  border-radius: 10px;
+  margin: 3rem 0;
+  border: 1px dashed var(--secondary);
+}
+
+.email-box {
+  font-size: 1.3rem;
+  margin: 1.5rem 0;
+  font-weight: 600;
+}
+
+.email-box a {
+  color: var(--primary);
+  text-decoration: none;
+  border-bottom: 2px dotted var(--secondary);
+  transition: all 0.3s;
+}
+
+.email-box a:hover {
+  color: #5e35b1;
+  border-bottom-style: solid;
+}
+
+.small {
+  font-size: 0.9rem;
+  opacity: 0.8;
+  margin-top: 1rem;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .poesia {
+    font-size: 1.8rem;
+  }
+  
+  .columns {
+    flex-direction: column;
+  }
+}
