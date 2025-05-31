@@ -150,41 +150,18 @@
     </div>
 
     <script>
-    const overlayBtn = document.querySelector('.enter-btn');
-    const container = document.querySelector('.container');
-    const overlay = document.querySelector('.overlay');
-    const langBtn = document.getElementById('switch-lang');
+        document.querySelector('.enter-btn').addEventListener('click', function() {
+            document.querySelector('.overlay').classList.add('fade-out');
+            setTimeout(() => {
+                document.querySelector('.overlay').style.display = 'none';
+                document.querySelector('.container').classList.remove('hidden');
+            }, 1000);
+        });
 
-    overlayBtn.addEventListener('click', () => {
-        overlay.classList.add('fade-out');
-        setTimeout(() => {
-            overlay.style.display = 'none';
-            container.classList.remove('hidden');
-        }, 1000);
-    });
-
-    langBtn.addEventListener('click', () => {
-        // salva lingua e ricarica
-        const currentLang = localStorage.getItem('lang') || 'it';
-        if (currentLang === 'it') {
-            localStorage.setItem('lang', 'en');
+        document.getElementById('switch-lang').addEventListener('click', function() {
             window.location.href = "english-version.html";
-        } else {
-            localStorage.setItem('lang', 'it');
-            window.location.href = "index.html";
-        }
-    });
-
-    // Al caricamento pagina, imposta la lingua giusta
-    window.addEventListener('DOMContentLoaded', () => {
-        const savedLang = localStorage.getItem('lang');
-        if (savedLang === 'en' && !window.location.href.includes('english-version')) {
-            window.location.href = "english-version.html";
-        } else if (savedLang === 'it' && !window.location.href.includes('index')) {
-            window.location.href = "index.html";
-        }
-    });
-</script>
+        });
+    </script>
 
       <section id="dialogo" class="section-box">
             <h2>Costruiamo dialogo</h2>
