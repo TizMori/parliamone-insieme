@@ -293,6 +293,14 @@ footer {
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
 }
 
+.special-box {
+    border-left: 6px solid #355E9B; /* blu profondo */
+    background-color: #f7f7f7;
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
 /* Media Query per Mobile */
 @media (max-width: 768px) {
     .poesia {
