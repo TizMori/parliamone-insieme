@@ -318,6 +318,10 @@ footer {
     font-style: italic;
     text-align: center;
 }
+.section-box {
+  scroll-margin-top: 100px; /* o regolalo se hai una navbar fissa */
+}
+
 /* Layout griglia sezioni principali */
 .section-grid {
     display: flex;
