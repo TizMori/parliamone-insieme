@@ -259,6 +259,40 @@ footer {
     margin-right: 0.5rem;
 }
 
+/* Sezione quadro-narrativo */
+.section-box ul {
+    margin-top: 1rem;
+    padding-left: 1.2rem;
+    list-style-type: disc;
+    color: var(--primary);
+    font-size: 1.05rem;
+}
+
+.section-box ul li {
+    margin-bottom: 0.8rem;
+}
+
+.section-box ul li a {
+    color: var(--secondary);
+    text-decoration: underline dotted;
+    transition: color 0.3s ease;
+}
+
+.section-box ul li a:hover {
+    color: var(--primary);
+    text-decoration-style: solid;
+}
+
+/* Sezione evidenziata per esperienze */
+#monserrato {
+    background-color: rgba(247, 232, 216, 0.3);
+    border: 2px solid var(--secondary);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
 /* Media Query per Mobile */
 @media (max-width: 768px) {
     .poesia {
