@@ -318,6 +318,15 @@ footer {
     font-style: italic;
     text-align: center;
 }
+.section-title {
+  border-left: 5px solid #41729F;
+  padding-left: 1rem;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
+  color: #2d2d2d;
+  font-weight: 600;
+}
+
 .section-box {
   scroll-margin-top: 100px; /* o regolalo se hai una navbar fissa */
 }
