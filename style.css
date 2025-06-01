@@ -407,4 +407,22 @@ footer {
 .article-card a:hover {
   text-decoration: underline;
 }
+@media (max-width: 600px) {
+  .article-card {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .article-card h3 {
+    font-size: 1.1rem;
+  }
+
+  .article-card p {
+    margin-bottom: 0.5rem;
+  }
+
+  .article-grid {
+    gap: 0.8rem;
+  }
+}
 
