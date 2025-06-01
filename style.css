@@ -425,4 +425,9 @@ footer {
     gap: 0.8rem;
   }
 }
+.article-card.alt {
+  background-color: #f0f0f5; /* grigio lavanda chiaro */
+  border: 1px solid #d4d4d4;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.05);
+}
 
