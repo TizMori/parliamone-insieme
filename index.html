@@ -117,23 +117,38 @@
     </div>
 
     <script>
-        document.querySelector('.enter-btn').addEventListener('click', function() {
-            document.querySelector('.overlay').classList.add('fade-out');
-            setTimeout(() => {
-                document.querySelector('.overlay').style.display = 'none';
-                document.querySelector('.container').classList.remove('hidden');
-            }, 1000);
-        });
+    document.querySelector('.enter-btn').addEventListener('click', function () {
+        document.querySelector('.overlay').classList.add('fade-out');
+        setTimeout(() => {
+            document.querySelector('.overlay').style.display = 'none';
+            document.querySelector('.container').classList.remove('hidden');
 
-        document.getElementById('switch-lang')?.addEventListener('click', function() {
-            window.location.href = "english-version.html";
-        });
+            // Dopo la transizione, forza lo scroll in alto
+            window.scrollTo(0, 0);
 
-        window.onload = function() {
-            if (!window.location.hash) {
-                window.scrollTo(0, 0);
+            // Se c'è un hash nella URL, fai lo scroll manuale
+            const hash = window.location.hash;
+            if (hash) {
+                const target = document.querySelector(hash);
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
             }
-        };
-    </script>
+        }, 1000);
+    });
+
+    // Lingua
+    document.getElementById('switch-lang')?.addEventListener('click', function () {
+        window.location.href = "english-version.html";
+    });
+
+    // Scroll all'inizio se non c'è hash (es. primo caricamento)
+    window.onload = function () {
+        if (!window.location.hash) {
+            window.scrollTo(0, 0);
+        }
+    };
+</script>
+
 </body>
 </html>
