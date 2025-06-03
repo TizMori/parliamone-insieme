@@ -117,38 +117,44 @@
     </div>
 
     <script>
-    document.querySelector('.enter-btn').addEventListener('click', function () {
-        document.querySelector('.overlay').classList.add('fade-out');
+  document.querySelector('.enter-btn').addEventListener('click', function () {
+    document.querySelector('.overlay').classList.add('fade-out');
+
+    setTimeout(() => {
+      document.querySelector('.overlay').style.display = 'none';
+      document.querySelector('.container').classList.remove('hidden');
+
+      // Primo scroll in alto forzato
+      window.scrollTo(0, 0);
+
+      // Se c'è un hash (es. #azioni), memorizzalo ma non scrollare subito
+      const hash = window.location.hash;
+
+      // Scrolla alla sezione solo DOPO un tempo, così l’utente vede l’introduzione e il menù
+      if (hash) {
         setTimeout(() => {
-            document.querySelector('.overlay').style.display = 'none';
-            document.querySelector('.container').classList.remove('hidden');
+          const target = document.querySelector(hash);
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 2500); // attende 2.5 secondi
+      }
+    }, 1000); // fine animazione overlay
+  });
 
-            // Dopo la transizione, forza lo scroll in alto
-            window.scrollTo(0, 0);
+  // Cambio lingua
+  document.getElementById('switch-lang')?.addEventListener('click', function () {
+    window.location.href = "english-version.html";
+  });
 
-            // Se c'è un hash nella URL, fai lo scroll manuale
-            const hash = window.location.hash;
-            if (hash) {
-                const target = document.querySelector(hash);
-                if (target) {
-                    target.scrollIntoView({ behavior: 'smooth' });
-                }
-            }
-        }, 1000);
-    });
-
-    // Lingua
-    document.getElementById('switch-lang')?.addEventListener('click', function () {
-        window.location.href = "english-version.html";
-    });
-
-    // Scroll all'inizio se non c'è hash (es. primo caricamento)
-    window.onload = function () {
-        if (!window.location.hash) {
-            window.scrollTo(0, 0);
-        }
-    };
+  // Evita scroll immediato su caricamento diretto
+  window.onload = function () {
+    if (!window.location.hash) {
+      window.scrollTo(0, 0);
+    }
+  };
 </script>
+
 
 </body>
 </html>
