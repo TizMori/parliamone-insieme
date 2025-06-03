@@ -454,5 +454,16 @@ footer {
   color: #666;
   font-size: 0.95rem;
 }
+.enter-btn.light {
+  background-color: #f1f0fa;
+  color: #333;
+  border: 2px solid var(--primary);
+  font-weight: bold;
+}
+
+.enter-btn.light:hover {
+  background-color: #e6e3f5;
+  color: var(--secondary);
+}
 
 
