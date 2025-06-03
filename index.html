@@ -124,34 +124,18 @@
       document.querySelector('.overlay').style.display = 'none';
       document.querySelector('.container').classList.remove('hidden');
 
-      // Primo scroll in alto forzato
+      // Forza lo scroll in alto e NON esegue nessun scroll hash automatico
       window.scrollTo(0, 0);
-
-      // Se c'è un hash (es. #azioni), memorizzalo ma non scrollare subito
-      const hash = window.location.hash;
-
-      // Scrolla alla sezione solo DOPO un tempo, così l’utente vede l’introduzione e il menù
-      if (hash) {
-        setTimeout(() => {
-          const target = document.querySelector(hash);
-          if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        }, 2500); // attende 2.5 secondi
-      }
-    }, 1000); // fine animazione overlay
+    }, 1000);
   });
 
-  // Cambio lingua
   document.getElementById('switch-lang')?.addEventListener('click', function () {
     window.location.href = "english-version.html";
   });
 
-  // Evita scroll immediato su caricamento diretto
   window.onload = function () {
-    if (!window.location.hash) {
-      window.scrollTo(0, 0);
-    }
+    // Anche in caso di hash nella URL, forza l’apertura dall’alto
+    window.scrollTo(0, 0);
   };
 </script>
 
