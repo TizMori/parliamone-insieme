@@ -465,5 +465,32 @@ footer {
   background-color: #e6e3f5;
   color: var(--secondary);
 }
+.framed-photo {
+  margin: 2rem 0;
+  padding: 1rem;
+  background-color: #f4f4f4;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.framed-photo img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.framed-photo p {
+  text-align: center;
+  font-style: italic;
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+/* Ottimizzazione per mobile */
+@media (max-width: 768px) {
+  .framed-photo {
+    padding: 0.5rem;
+  }
+}
 
 
