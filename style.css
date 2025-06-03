@@ -558,3 +558,28 @@ footer {
   margin-top: 2rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
+.contatto-speciale {
+  border: 2px solid #d8d8d8;
+  border-radius: 12px;
+  padding: 30px 20px;
+  background: #fffefc;
+  box-shadow: 0 0 10px rgba(0,0,0,0.07);
+  margin-top: 2rem;
+  text-align: center;
+}
+
+.contatto-speciale .email-cta a {
+  display: inline-block;
+  background: #ffd699;
+  color: #333;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: background 0.3s ease;
+}
+
+.contatto-speciale .email-cta a:hover {
+  background: #ffbe59;
+}
