@@ -526,3 +526,27 @@ footer {
   background-color: #dddddd;
   color: #000000;
 }
+.menu-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.menu-btn {
+  background: linear-gradient(135deg, #f2f2f2, #e6e6e6);
+  color: #333;
+  text-decoration: none;
+  padding: 12px 20px;
+  border-radius: 20px;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  transition: all 0.3s ease;
+}
+
+.menu-btn:hover {
+  background: linear-gradient(135deg, #dcdcdc, #cfcfcf);
+  transform: translateY(-2px);
+  color: #000;
+}
