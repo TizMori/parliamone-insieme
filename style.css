@@ -430,4 +430,29 @@ footer {
   border: 1px solid #d4d4d4;
   box-shadow: 0 1px 4px rgba(0,0,0,0.05);
 }
+.highlight-box {
+  background-color: #f1f0fa;
+  border-left: 6px solid var(--secondary);
+  padding: 1.8rem;
+  margin: 2rem 0;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+  font-size: 1.05rem;
+  color: #333;
+}
+
+.highlight-quote {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--primary);
+  font-style: italic;
+  margin-bottom: 1rem;
+}
+
+.hashtag {
+  margin-top: 1rem;
+  color: #666;
+  font-size: 0.95rem;
+}
+
 
