@@ -492,5 +492,39 @@ footer {
     padding: 0.5rem;
   }
 }
+.article-card img:hover {
+  filter: brightness(0.95);
+  transition: all 0.3s ease;
+}
+
+.article-card img {
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+@media screen and (max-width: 768px) {
+  .article-grid {
+    grid-template-columns: 1fr;
+  }
+  .article-card img {
+    max-height: 300px;
+    object-fit: cover;
+  }
+}
+.enter-btn {
+  display: inline-block;
+  background-color: #f2f2f2; /* colore chiaro neutro */
+  color: #333333; /* testo in grigio scuro */
+  padding: 10px 20px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  transition: background-color 0.3s ease;
+}
+
+.enter-btn:hover {
+  background-color: #dddddd;
+  color: #000000;
+}
 
 
