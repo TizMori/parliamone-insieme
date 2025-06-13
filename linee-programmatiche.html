@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Linee Programmatiche Realizzate | Tiziana Mori</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #003366;
+      --secondary: #8B0000;
+      --accent: #FFD700;
+      --light: #f8f9fa;
+      --dark: #212529;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background-color: #f0f2f5;
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    /* Header Styles */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 1rem 0;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    
+    .header-content {
+      padding: 2rem 0;
+    }
+    
+    .logo {
+      margin-bottom: 1rem;
+    }
+    
+    .logo img {
+      max-width: 300px;
+      height: auto;
+    }
+    
+    .profile-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-bottom: 1rem;
+    }
+    
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid white;
+      object-fit: cover;
+      margin-bottom: 15px;
+    }
+    
+    .header-text h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+    
+    .tagline {
+      font-style: italic;
+      font-size: 1.1rem;
+    }
+    
+    .page-title {
+      padding: 1.5rem;
+      margin-top: 1rem;
+    }
+    
+    .page-title h2 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+    
+    .page-title p {
+      font-size: 1.1rem;
+      max-width: 800px;
+      margin: 0 auto;
+      color: white;
+    }
+    
+    /* Theme Cards */
+    .theme-section {
+      margin: 3rem 0;
+    }
+    
+    .theme-header {
+      text-align: center;
+      margin-bottom: 2rem;
+      padding: 1.5rem;
+      border-radius: 10px;
+      background: linear-gradient(135deg, var(--primary), #001a33);
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .theme-header h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      position: relative;
+      display: inline-block;
+      padding-bottom: 10px;
+    }
+    
+    .theme-header h3::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 100px;
+      height: 4px;
+      background-color: var(--accent);
+      border-radius: 2px;
+    }
+    
+    .theme-header p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+    }
+    
+    /* Social Cards Grid */
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+      margin-bottom: 3rem;
+    }
+    
+    .social-card {
+      background-color: white;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+      transition: all 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+    }
+    
+    .social-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+    }
+    
+    .card-header {
+      padding: 20px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .card-header h4 {
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      color: var(--primary);
+    }
+    
+    .card-date {
+      color: #666;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    .card-image {
+      height: 180px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .social-card:hover .card-image img {
+      transform: scale(1.05);
+    }
+    
+    .card-content {
+      padding: 20px;
+      flex-grow: 1;
+    }
+    
+    .card-content p {
+      margin-bottom: 1rem;
+    }
+    
+    .card-footer {
+      padding: 0 20px 20px;
+      margin-top: auto;
+    }
+    
+    .read-more {
+      display: inline-block;
+      background-color: var(--primary);
+      color: white;
+      padding: 8px 20px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    
+    .read-more:hover {
+      background-color: var(--secondary);
+      transform: translateY(-2px);
+    }
+    
+    /* Stats Section */
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      margin: 3rem 0;
+    }
+    
+    .stat-card {
+      background: linear-gradient(135deg, var(--primary), #001a33);
+      color: white;
+      padding: 30px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .stat-number {
+      font-size: 3rem;
+      font-weight: bold;
+      margin-bottom: 10px;
+      display: block;
+    }
+    
+    .stat-label {
+      font-size: 1.1rem;
+    }
+    
+    /* Call to Action */
+    .cta-section {
+      background: linear-gradient(135deg, var(--secondary), #6a0000);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+      border-radius: 15px;
+      margin: 4rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .cta-section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Prof.ssa%20Tiziana%20MORI.jpg') center/cover;
+      opacity: 0.15;
+      z-index: 0;
+    }
+    
+    .cta-content {
+      position: relative;
+      z-index: 1;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .cta-content h3 {
+      font-size: 2.2rem;
+      margin-bottom: 1.5rem;
+    }
+    
+    .cta-content p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      background-color: var(--accent);
+      color: var(--primary);
+      padding: 12px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    }
+    
+    .cta-button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      background-color: #ffdf40;
+    }
+    
+    /* Footer */
+    footer {
+      background-color: var(--dark);
+      color: white;
+      padding: 3rem 0 1.5rem;
+      margin-top: 3rem;
+    }
+    
+    .footer-content {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-bottom: 2rem;
+    }
+    
+    .footer-column h4 {
+      font-size: 1.2rem;
+      margin-bottom: 1.2rem;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .footer-column h4::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 3px;
+      background-color: var(--accent);
+    }
+    
+    .footer-column p, .footer-column a {
+      color: #ddd;
+      margin-bottom: 0.8rem;
+      display: block;
+      text-decoration: none;
+      transition: color 0.3s ease;
+    }
+    
+    .footer-column a:hover {
+      color: var(--accent);
+    }
+    
+    .social-links {
+      display: flex;
+      gap: 15px;
+      margin-top: 15px;
+    }
+    
+    .social-links a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255,255,255,0.1);
+      border-radius: 50%;
+      transition: all 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background-color: var(--accent);
+      color: var(--dark);
+      transform: translateY(-3px);
+    }
+    
+    .copyright {
+      text-align: center;
+      padding-top: 1.5rem;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    
+    /* Responsive Adjustments */
+    @media (max-width: 768px) {
+      .page-title h2 {
+        font-size: 1.8rem;
+      }
+      
+      .social-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .stats-container {
+        grid-template-columns: 1fr;
+      }
+    }
+    
+    /* Theme Specific Colors */
+    .theme-social { background: linear-gradient(135deg, #1e88e5, #0d47a1); }
+    .theme-family { background: linear-gradient(135deg, #e91e63, #880e4f); }
+    .theme-education { background: linear-gradient(135deg, #4caf50, #1b5e20); }
+    .theme-health { background: linear-gradient(135deg, #ff9800, #e65100); }
+    .theme-participation { background: linear-gradient(135deg, #00bcd4, #006064); }
+    .theme-women { background: linear-gradient(135deg, #9c27b0, #4a148c); }
+    .theme-elderly { background: linear-gradient(135deg, #3f51b5, #1a237e); }
+    .theme-europe { background: linear-gradient(135deg, #ffeb3b, #f57f17); color: #333; }
+  </style>
+</head>
+<body>
+  <!-- Header Section -->
+  <header>
+    <div class="container">
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html"><img src="assets/Parliamone Insieme.png" alt="Logo"></a>
+        </div>
+        
+        <div class="profile-header">
+          <img src="assets/Prof.ssa%20Tiziana%20MORI.jpg" alt="Tiziana Mori" class="profile-img">
+          <div class="header-text">
+            <h1>Tiziana Mori</h1>
+            <p class="tagline">Carpe diem</p>
+          </div>
+        </div>
+        
+        <div class="page-title">
+          <h2>LE LINEE PROGRAMMATICHE REALIZZATE</h2>
+          <p>Durante il mio mandato come Assessora a Monserrato (2019-2022)</p>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Politiche Sociali Section -->
+    <section class="theme-section">
+      <div class="theme-header theme-social">
+        <h3><i class="fas fa-hands-helping"></i> Politiche Sociali e Inclusione</h3>
+        <p>Interventi mirati per contrastare la povertà e promuovere l'inclusione sociale</p>
+      </div>
+      
+      <div class="social-grid">
+        <div class="social-card">
+          <div class="card-header">
+            <h4>REIS e Terzo Settore</h4>
+            <div class="card-date"><i class="far fa-calendar"></i> 2021</div>
+          </div>
+          <div class="card-image">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Dono%20Day%20Monserrato.jpg" alt="REIS e Terzo Settore">
+          </div>
+          <div class="card-content">
+            <p>Collaborazione tra Comune e Terzo Settore per misure di contrasto alla povertà e inclusione sociale.</p>
+          </div>
+          <div class="card-footer">
+            <a href="https://www.cagliaripost.com/monserrato-assessorato-politiche-sociali-comunica-lapertura-delle-procedure-reis-tutti-le-opportunita-in-corso-in-collaborazione-con-il-terzo-settore/" class="read-more" target="_blank">Leggi l'articolo</a>
+          </div>
+        </div>
+        
+        <div class="social-card">
+          <div class="card-header">
+            <h4>Welfare e bandi</h4>
+            <div class="card-date"><i class="far fa-calendar"></i> 2020-2022</div>
+          </div>
+          <div class="card-image">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Regalo%20in%20sospeso.jpg" alt="Welfare e bandi">
+          </div>
+          <div class="card-content">
+            <p>Promozione di strumenti di coprogrammazione per attrarre risorse e attivare progettualità nel sociale.</p>
+          </div>
+          <div class="card-footer">
+            <a href="https://www.youtg.net/canali/dai-comuni/30198-il-comune-di-monserrato-chiama-cercansi-partner-per-progetti-sul-welfare" class="read-more" target="_blank">Leggi l'articolo</a>
+          </div>
+        </div>
+        
+        <div class="social-card">
+          <div class="card-header">
+            <h4>Inclusione sociale</h4>
+            <div class="card-date"><i class="far fa-calendar"></i> 2021</div>
+          </div>
+          <div class="card-image">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/parco%20polifunzionale%20via%20Caracalla.jpg" alt="Inclusione sociale">
+          </div>
+          <div class="card-content">
+            <p>Partecipazione a bandi nazionali e regionali per favorire l'inclusione e il benessere delle persone fragili.</p>
+          </div>
+          <div class="card-footer">
+            <a href="https://www.cagliaripost.com/comune-di-monserrato-riapertura-bando-includis%EF%BF%BC/" class="read-more" target="_blank">Leggi l'articolo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Servizi Famiglia Section -->
+    <section class="theme-section">
+      <div class="theme-header theme-family">
+        <h3><i class="fas fa-home"></i> Servizi alla Famiglia e Infanzia</h3>
+        <p>Iniziative concrete a sostegno delle famiglie e dei più piccoli</p>
+      </div>
+      
+      <div class="social-grid">
+        <div class="social-card">
+          <div class="card-header">
+            <h4>Centro Famiglia</h4>
+            <div class="card-date"><i class="far fa-calendar"></i> 2021</div>
+          </div>
+          <div class="card-image">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/apertura%20Sportello%20Famiglia-Network%20Family.jpg" alt="Centro Famiglia">
+          </div>
+          <div class="card-content">
+            <p>Nuovo spazio stabile per famiglie, operatori e sostegno alla genitorialità.</p>
+          </div>
+          <div class="card-footer">
+            <a href="https://www.latestata.it/news/monserato-apre-il-centro-famiglia/" class="read-more" target="_blank">Leggi l'articolo</a>
+          </div>
+        </div>
+        
+        <div class="social-card">
+          <div class="card-header">
+            <h4>Bonus nidi gratuiti</h4>
+            <div class="card-date"><i class="far fa-calendar"></i> 2020</div>
+          </div>
+          <div class="card-image">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/bonus%20nido.jpg" alt="Bonus nidi">
+          </div>
+          <div class="card-content">
+            <p>Pubblicata la graduatoria per i bonus nidi gratuiti: un sostegno concreto alle famiglie.</p>
+          </div>
+          <div class="card-footer">
+            <a href="https://www.castedduonline.it/monserrato-ecco-la-graduatoria-sui-bonus-nidi-gratuiti/" class="read-more" target="_blank">Leggi l'articolo</a>
+          </div>
+        </div>
+        
+        <div class="social-card">
+          <div class="card-header">
+            <h4>Comuni amici della famiglia</h4>
+            <div class="card-date"><i class="far fa-calendar"></i> 2021</div>
+          </div>
+          <div class="card-image">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/network%20family.jpg" alt="Comuni amici">
+          </div>
+          <div class="card-content">
+            <p>Monserrato entra nella rete nazionale per politiche familiari inclusive.</p>
+          </div>
+          <div class="card-footer">
+            <a href="https://www.cagliaripost.com/monserrato-entra-nel-network-europeo-comuni-amici-famiglia/" class="read-more" target="_blank">Leggi l'articolo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Educazione Section -->
+    <section class="theme-section">
+      <div class="theme-header theme-education">
+        <h3><i class="fas fa-graduation-cap"></i> Educazione e Giovani</h3>
+        <p>Progetti educativi innovativi e opportunità per le nuove generazioni</p>
+      </div>
+      
+      <div class="social-grid">
+        <div class="social-card">
+          <div class="card-header">
+            <h4>Educare Insieme con CESVI</h4>
+            <div class="card-date"><i class="far fa-calendar"></i> 2020</div>
+          </div>
+          <div class="card-image">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/educare%20insieme.jpg" alt="Educare Insieme">
+          </div>
+          <div class="card-content">
+            <p>Progetto per iniziative educative innovative per l'infanzia e l'adolescenza.</p>
+          </div>
+          <div class="card-footer">
+            <a href="https://www.castedduonline.it/monserrato-aderisce-alla-proposta-progettuale-della-fondazione-cesvi-per-il-bando-educare-insieme/" class="read-more" target="_blank">Leggi l'articolo</a>
+          </div>
+        </div>
+        
+        <div class="social-card">
+          <div class="card-header">
+            <h4>Eurodesk Monserrato</h4>
+            <div class="card-date"><i class="far fa-calendar"></i> 2021</div>
+          </div>
+          <div class="card-image">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/CentroEurodesk.Monserrato.jpg" alt="Eurodesk">
+          </div>
+          <div class="card-content">
+            <p>Punto informativo per opportunità europee rivolte ai giovani.</p>
+          </div>
+          <div class="card-footer">
+            <a href="https://www.castedduonline.it/monserrato-eurtodesk/" class="read-more" target="_blank">Leggi l'articolo</a>
+          </div>
+        </div>
+        
+        <div class="social-card">
+          <div class="card-header">
+            <h4>Contrasto al bullismo</h4>
+            <div class="card-date"><i class="far fa-calendar"></i> 2021</div>
+          </div>
+          <div class="card-image">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/evento%20sul%20contrasto%20al%20Bullismo.jpg" alt="Contrasto al bullismo">
+          </div>
+          <div class="card-content">
+            <p>Seminari e convegni sul contrasto al bullismo in collaborazione con Arka Eventi culturali.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="read-more" target="_blank">Scopri di più</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <div class="stats-container">
+      <div class="stat-card">
+        <span class="stat-number">30+</span>
+        <span class="stat-label">Progetti Realizzati</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">15</span>
+        <span class="stat-label">Collaborazioni con Terzo Settore</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">8</span>
+        <span class="stat-label">Aree Tematiche</span>
+      </div>
+      <div class="stat-card">
+        <span class="stat-number">5000+</span>
+        <span class="stat-label">Cittadini Coinvolti</span>
+      </div>
+    </div>
+
+    <!-- Call to Action Section -->
+    <div class="cta-section">
+      <div class="cta-content">
+        <h3>Un impegno continuo per Monserrato</h3>
+        <p>La mia esperienza amministrativa è stata caratterizzata da un approccio concreto e partecipativo, con l'obiettivo di migliorare la qualità della vita dei cittadini attraverso politiche sociali innovative e inclusive.</p>
+        <a href="monserrato.html" class="cta-button">Scopri la mia esperienza completa</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
+        <div class="footer-column">
+          <h4>Parliamone Insieme</h4>
+          <p>Un progetto di partecipazione e dialogo promosso da Tiziana Mori</p>
+          <p>Per un politica più vicina ai cittadini e alle loro esigenze</p>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Contatti</h4>
+          <p><i class="fas fa-envelope"></i> contatti.parliamone.insieme@gmail.com</p>
+          <p><i class="fas fa-map-marker-alt"></i> Monserrato, Cagliari</p>
+          <div class="social-links">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+          </div>
+        </div>
+        
+        <div class="footer-column">
+          <h4>Link Utili</h4>
+          <a href="index.html">Home</a>
+          <a href="monserrato.html">Esperienza a Monserrato</a>
+          <a href="#">Progetti Futuri</a>
+          <a href="#">Blog</a>
+        </div>
+      </div>
+      
+      <div class="copyright">
+        <p>© 2025 Parliamone Insieme - Tutti i diritti riservati</p>
+        <p>Le informazioni presenti su questa pagina sono fornite a scopo divulgativo. Non costituiscono consulenza legale o professionale.</p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
