@@ -1,26 +1,9 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-  <style>
-  .card-image {
-    position: relative;
-  }
-  .card-image:after {
-    content: "Illustrazione simbolica";
-    position: absolute;
-    bottom: 0;
-    background: rgba(0,0,0,0.7);
-    color: white;
-    width: 100%;
-    padding: 5px;
-    font-size: 0.8rem;
-    text-align: center;
-  }
-</style>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Linee Programmatiche Realizzate | Tiziana Mori</title>
-  <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     :root {
@@ -167,6 +150,7 @@
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 25px;
       margin-bottom: 3rem;
+      align-items: stretch;
     }
     
     .social-card {
@@ -249,6 +233,25 @@
     .read-more:hover {
       background-color: var(--secondary);
       transform: translateY(-2px);
+    }
+    
+    /* Fallback per immagini mancanti */
+    .card-image:after {
+      content: "Illustrazione simbolica";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 8px;
+      font-size: 0.8rem;
+      text-align: center;
+      display: none;
+    }
+    
+    .card-image.broken-image:after {
+      display: block;
     }
     
     /* Stats Section */
@@ -446,11 +449,11 @@
     <div class="container">
       <div class="header-content">
         <div class="logo">
-          <a href="index.html"><img src="assets/Parliamone Insieme.png" alt="Logo"></a>
+          <a href="index.html"><img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Parliamone%20Insieme.png" alt="Logo"></a>
         </div>
         
         <div class="profile-header">
-          <img src="assets/Prof.ssa%20Tiziana%20MORI.jpg" alt="Tiziana Mori" class="profile-img">
+          <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Prof.ssa%20Tiziana%20MORI.jpg" alt="Tiziana Mori" class="profile-img">
           <div class="header-text">
             <h1>Tiziana Mori</h1>
             <p class="tagline">Carpe diem</p>
@@ -474,51 +477,63 @@
       </div>
       
       <div class="social-grid">
+        <!-- REIS e Terzo Settore -->
         <div class="social-card">
           <div class="card-header">
             <h4>REIS e Terzo Settore</h4>
             <div class="card-date"><i class="far fa-calendar"></i> 2021</div>
           </div>
           <div class="card-image">
-            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Dono%20Day%20Monserrato.jpg" alt="REIS e Terzo Settore">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Dono%20Day%20Monserrato.jpg" 
+                 alt="Collaborazione Terzo Settore"
+                 onerror="this.parentNode.classList.add('broken-image')">
           </div>
           <div class="card-content">
             <p>Collaborazione tra Comune e Terzo Settore per misure di contrasto alla povertà e inclusione sociale.</p>
           </div>
           <div class="card-footer">
-            <a href="https://www.cagliaripost.com/monserrato-assessorato-politiche-sociali-comunica-lapertura-delle-procedure-reis-tutti-le-opportunita-in-corso-in-collaborazione-con-il-terzo-settore/" class="read-more" target="_blank">Leggi l'articolo</a>
+            <a href="https://www.cagliaripost.com/monserrato-assessorato-politiche-sociali-comunica-lapertura-delle-procedure-reis-tutti-le-opportunita-in-corso-in-collaborazione-con-il-terzo-settore/" 
+               class="read-more" target="_blank">Leggi l'articolo</a>
           </div>
         </div>
         
+        <!-- Welfare e bandi -->
         <div class="social-card">
           <div class="card-header">
             <h4>Welfare e bandi</h4>
             <div class="card-date"><i class="far fa-calendar"></i> 2020-2022</div>
           </div>
           <div class="card-image">
-            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Regalo%20in%20sospeso.jpg" alt="Welfare e bandi">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Regalo%20in%20sospeso.jpg" 
+                 alt="Progetti welfare"
+                 onerror="this.parentNode.classList.add('broken-image')">
           </div>
           <div class="card-content">
             <p>Promozione di strumenti di coprogrammazione per attrarre risorse e attivare progettualità nel sociale.</p>
           </div>
           <div class="card-footer">
-            <a href="https://www.youtg.net/canali/dai-comuni/30198-il-comune-di-monserrato-chiama-cercansi-partner-per-progetti-sul-welfare" class="read-more" target="_blank">Leggi l'articolo</a>
+            <a href="https://www.youtg.net/canali/dai-comuni/30198-il-comune-di-monserrato-chiama-cercansi-partner-per-progetti-sul-welfare" 
+               class="read-more" target="_blank">Leggi l'articolo</a>
           </div>
         </div>
         
+        <!-- Inclusione sociale -->
         <div class="social-card">
           <div class="card-header">
             <h4>Inclusione sociale</h4>
             <div class="card-date"><i class="far fa-calendar"></i> 2021</div>
           </div>
           <div class="card-image">
-            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/parco%20polifunzionale%20via%20Caracalla.jpg" alt="Inclusione sociale">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Reis%2C%20Mori.jpg" 
+                 alt="Iniziative inclusione"
+                 onerror="this.parentNode.classList.add('broken-image')">
           </div>
           <div class="card-content">
             <p>Partecipazione a bandi nazionali e regionali per favorire l'inclusione e il benessere delle persone fragili.</p>
           </div>
           <div class="card-footer">
-            <a href="https://www.cagliaripost.com/comune-di-monserrato-riapertura-bando-includis%EF%BF%BC/" class="read-more" target="_blank">Leggi l'articolo</a>
+            <a href="https://www.cagliaripost.com/comune-di-monserrato-riapertura-bando-includis%EF%BF%BC/" 
+               class="read-more" target="_blank">Leggi l'articolo</a>
           </div>
         </div>
       </div>
@@ -532,60 +547,63 @@
       </div>
       
       <div class="social-grid">
+        <!-- Centro Famiglia -->
         <div class="social-card">
           <div class="card-header">
             <h4>Centro Famiglia</h4>
             <div class="card-date"><i class="far fa-calendar"></i> 2021</div>
           </div>
           <div class="card-image">
-            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/apertura%20Sportello%20Famiglia-Network%20Family.jpg" alt="Centro Famiglia">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/apertura%20Sportello%20Famiglia-Network%20Family.jpg" 
+                 alt="Centro Famiglia"
+                 onerror="this.parentNode.classList.add('broken-image')">
           </div>
           <div class="card-content">
             <p>Nuovo spazio stabile per famiglie, operatori e sostegno alla genitorialità.</p>
           </div>
           <div class="card-footer">
-            <a href="https://www.latestata.it/news/monserato-apre-il-centro-famiglia/" class="read-more" target="_blank">Leggi l'articolo</a>
+            <a href="https://www.latestata.it/news/monserato-apre-il-centro-famiglia/" 
+               class="read-more" target="_blank">Leggi l'articolo</a>
           </div>
         </div>
         
+        <!-- Bonus nidi gratuiti -->
         <div class="social-card">
           <div class="card-header">
-            <!-- SERVIZI FAMIGLIA - Bonus nidi gratuiti -->
-<div class="social-card">
-  <div class="card-header">
-    <h4>Bonus nidi gratuiti</h4>
-    <div class="card-date"><i class="far fa-calendar"></i> 2020</div>
-  </div>
-  <div class="card-image">
-    <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Regalo%20in%20sospeso.jpg" alt="Bonus nidi"> <!-- IMMAGINE AGGIORNATA -->
-  </div>
-</div>
+            <h4>Bonus nidi gratuiti</h4>
+            <div class="card-date"><i class="far fa-calendar"></i> 2020</div>
+          </div>
+          <div class="card-image">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/bonuas%20nidi%20gratuiti.jpg" 
+                 alt="Bonus nidi"
+                 onerror="this.parentNode.classList.add('broken-image')">
+          </div>
           <div class="card-content">
             <p>Pubblicata la graduatoria per i bonus nidi gratuiti: un sostegno concreto alle famiglie.</p>
           </div>
           <div class="card-footer">
-            <a href="https://www.castedduonline.it/monserrato-ecco-la-graduatoria-sui-bonus-nidi-gratuiti/" class="read-more" target="_blank">Leggi l'articolo</a>
+            <a href="https://www.castedduonline.it/monserrato-ecco-la-graduatoria-sui-bonus-nidi-gratuiti/" 
+               class="read-more" target="_blank">Leggi l'articolo</a>
           </div>
         </div>
         
+        <!-- Comuni amici della famiglia -->
         <div class="social-card">
           <div class="card-header">
-           
-            <!-- SERVIZI FAMIGLIA - Comuni amici della famiglia -->
-<div class="social-card">
-  <div class="card-header">
-    <h4>Comuni amici della famiglia</h4>
-    <div class="card-date"><i class="far fa-calendar"></i> 2021</div>
-  </div>
-  <div class="card-image">
-    <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/apertura%20Sportello%20Famiglia-Network%20Family.jpg" alt="Rete Comuni"> <!-- IMMAGINE AGGIORNATA -->
-  </div>
-</div>
+            <h4>Comuni amici della famiglia</h4>
+            <div class="card-date"><i class="far fa-calendar"></i> 2021</div>
+          </div>
+          <div class="card-image">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/apertura%20Sportello%20Famiglia-Network%20Family.jpg" 
+                 alt="Rete Comuni"
+                 onerror="this.parentNode.classList.add('broken-image')">
+          </div>
           <div class="card-content">
             <p>Monserrato entra nella rete nazionale per politiche familiari inclusive.</p>
           </div>
           <div class="card-footer">
-            <a href="https://www.cagliaripost.com/monserrato-entra-nel-network-europeo-comuni-amici-famiglia/" class="read-more" target="_blank">Leggi l'articolo</a>
+            <a href="https://www.cagliaripost.com/monserrato-entra-nel-network-europeo-comuni-amici-famiglia/" 
+               class="read-more" target="_blank">Leggi l'articolo</a>
           </div>
         </div>
       </div>
@@ -599,48 +617,56 @@
       </div>
       
       <div class="social-grid">
+        <!-- Educare Insieme con CESVI -->
         <div class="social-card">
           <div class="card-header">
-           <!-- EDUCAZIONE - Educare Insieme con CESVI -->
-<div class="social-card">
-  <div class="card-header">
-    <h4>Educare Insieme con CESVI</h4>
-    <div class="card-date"><i class="far fa-calendar"></i> 2020</div>
-  </div>
-  <div class="card-image">
-    <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/evento%20sul%20contrasto%20al%20Bullismo.jpg" alt="Progetto educativo CESVI"> <!-- IMMAGINE AGGIORNATA -->
-  </div>
-</div>
+            <h4>Educare Insieme con CESVI</h4>
+            <div class="card-date"><i class="far fa-calendar"></i> 2020</div>
+          </div>
+          <div class="card-image">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/CESVI%20Monserrato%2C%20Mori.jpg" 
+                 alt="Progetto CESVI"
+                 onerror="this.parentNode.classList.add('broken-image')">
+          </div>
+          <div class="card-content">
             <p>Progetto per iniziative educative innovative per l'infanzia e l'adolescenza.</p>
           </div>
           <div class="card-footer">
-            <a href="https://www.castedduonline.it/monserrato-aderisce-alla-proposta-progettuale-della-fondazione-cesvi-per-il-bando-educare-insieme/" class="read-more" target="_blank">Leggi l'articolo</a>
+            <a href="https://www.castedduonline.it/monserrato-aderisce-alla-proposta-progettuale-della-fondazione-cesvi-per-il-bando-educare-insieme/" 
+               class="read-more" target="_blank">Leggi l'articolo</a>
           </div>
         </div>
         
+        <!-- Eurodesk Monserrato -->
         <div class="social-card">
           <div class="card-header">
             <h4>Eurodesk Monserrato</h4>
             <div class="card-date"><i class="far fa-calendar"></i> 2021</div>
           </div>
           <div class="card-image">
-            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/CentroEurodesk.Monserrato.jpg" alt="Eurodesk">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/CentroEurodesk.Monserrato.jpg" 
+                 alt="Eurodesk"
+                 onerror="this.parentNode.classList.add('broken-image')">
           </div>
           <div class="card-content">
             <p>Punto informativo per opportunità europee rivolte ai giovani.</p>
           </div>
           <div class="card-footer">
-            <a href="https://www.castedduonline.it/monserrato-eurtodesk/" class="read-more" target="_blank">Leggi l'articolo</a>
+            <a href="https://www.castedduonline.it/monserrato-eurtodesk/" 
+               class="read-more" target="_blank">Leggi l'articolo</a>
           </div>
         </div>
         
+        <!-- Contrasto al bullismo -->
         <div class="social-card">
           <div class="card-header">
             <h4>Contrasto al bullismo</h4>
             <div class="card-date"><i class="far fa-calendar"></i> 2021</div>
           </div>
           <div class="card-image">
-            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/evento%20sul%20contrasto%20al%20Bullismo.jpg" alt="Contrasto al bullismo">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/evento%20sul%20contrasto%20al%20Bullismo.jpg" 
+                 alt="Contrasto bullismo"
+                 onerror="this.parentNode.classList.add('broken-image')">
           </div>
           <div class="card-content">
             <p>Seminari e convegni sul contrasto al bullismo in collaborazione con Arka Eventi culturali.</p>
