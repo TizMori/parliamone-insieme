@@ -633,5 +633,55 @@ footer {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+    /* NUOVA SEZIONE PNRR */
+.pnrr-section {
+  background: #f8f5ff;
+  padding: 25px;
+  border-radius: 12px;
+  margin: 30px 0;
+  border-left: 4px solid #4e2a8e;
+}
+
+.pnrr-content {
+  margin-top: 20px;
+}
+
+.pnrr-content h3 {
+  color: #4e2a8e;
+  border-bottom: 1px solid #d4c2f0;
+  padding-bottom: 10px;
+}
+
+.btn {
+  display: inline-block;
+  padding: 12px 25px;
+  background: #4e2a8e;
+  color: white !important;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 15px;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: #3a1c6b;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Ottimizzazione mobile per PNRR */
+@media (max-width: 768px) {
+  .pnrr-section {
+    padding: 15px;
+    margin: 20px 0;
+  }
+  
+  .pnrr-content ul, 
+  .pnrr-content ol {
+    padding-left: 20px;
+  }
+}
 }
 
