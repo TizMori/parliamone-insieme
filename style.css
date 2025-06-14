@@ -683,5 +683,17 @@ footer {
     padding-left: 20px;
   }
 }
+/* AGGIUNGI QUESTO */
+.highlight-box, .section-box, .pnrr-content {
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+@media (max-width: 600px) {
+  .section-box li, .pnrr-content li {
+    font-size: 0.9rem;
+  }
+}
+    
 }
 
