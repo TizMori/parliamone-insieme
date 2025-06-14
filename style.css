@@ -725,6 +725,102 @@ footer {
 .card-footer {
   padding: 0 15px 15px;
 } 
-     
+    
+     /* STILE PER LA SEZIONE FAMIGLIA */
+.social-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  margin: 30px auto;
+  max-width: 1200px;
+}
+
+.social-card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 350px;
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.social-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.card-header {
+  padding: 15px 20px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-header h4 {
+  margin: 0;
+  font-size: 1.3rem;
+  color: #333;
+}
+
+.card-date {
+  background: #f0f0f0;
+  padding: 3px 10px;
+  border-radius: 15px;
+  font-size: 0.9rem;
+}
+
+.card-image img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  display: block;
+  border-bottom: 3px solid #4e2a8e;
+}
+
+.card-content {
+  padding: 15px 20px;
+}
+
+.card-content p {
+  margin: 0;
+  color: #555;
+  line-height: 1.6;
+}
+
+.card-footer {
+  padding: 0 20px 20px;
+  text-align: center;
+}
+
+.read-more {
+  display: inline-block;
+  padding: 8px 20px;
+  background: #4e2a8e;
+  color: white !important;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.read-more:hover {
+  background: #3a1c6b;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+@media (max-width: 768px) {
+  .social-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .social-card {
+    max-width: 100%;
+  }
+}
 }
 
