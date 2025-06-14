@@ -694,20 +694,6 @@ footer {
     font-size: 0.9rem;
   }
 }
-    .read-more {
-  display: inline-block;
-  padding: 8px 15px;
-  background: #4e2a8e;
-  color: white !important;
-  border-radius: 6px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-}
-
-.read-more:hover {
-  background: #3a1c6b;
-  transform: translateY(-2px);
-}
-    
+     
 }
 
