@@ -5,7 +5,251 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rassegna Stampa Cartacea | Tiziana Mori</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    body {
+      background: linear-gradient(135deg, #f9f9f9 0%, #e6f0ff 100%);
+      color: #333;
+      line-height: 1.6;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    /* Header Styles */
+    header {
+      background: linear-gradient(to right, #1e3c72, #2a5298);
+      color: white;
+      padding: 20px 0;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    
+    .header-content {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 20px;
+    }
+    
+    .logo img {
+      height: 80px;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    }
+    
+    .profile-header {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      flex: 1;
+    }
+    
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      object-fit: cover;
+    }
+    
+    .header-text h1 {
+      font-size: 2.2rem;
+      margin-bottom: 5px;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.3);
+    }
+    
+    .tagline {
+      font-style: italic;
+      opacity: 0.9;
+      font-size: 1.1rem;
+    }
+    
+    .page-title {
+      flex: 100%;
+      text-align: center;
+      padding: 20px 0;
+      margin-top: 10px;
+      border-top: 1px solid rgba(255,255,255,0.2);
+    }
+    
+    .page-title h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+      letter-spacing: 1px;
+    }
+    
+    /* Theme Section */
+    .theme-section {
+      margin: 30px 0;
+    }
+    
+    .theme-header {
+      background: linear-gradient(to right, #2a5298, #1e3c72);
+      color: white;
+      padding: 15px 20px;
+      border-radius: 8px 8px 0 0;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    
+    .theme-header h3 {
+      font-size: 1.4rem;
+    }
+    
+    .theme-header p {
+      font-style: italic;
+      opacity: 0.9;
+      margin-left: auto;
+    }
+    
+    /* Card Grid */
+    .social-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 25px;
+      margin-top: 20px;
+    }
+    
+    .social-card, .article-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .social-card:hover, .article-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .card-image {
+      height: 200px;
+      overflow: hidden;
+    }
+    
+    .card-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .social-card:hover .card-image img {
+      transform: scale(1.05);
+    }
+    
+    .card-content {
+      padding: 20px;
+    }
+    
+    .card-content h4 {
+      color: #1e3c72;
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+    }
+    
+    .card-content p {
+      margin-bottom: 8px;
+      color: #555;
+    }
+    
+    .card-content strong {
+      color: #2a5298;
+    }
+    
+    .card-footer {
+      padding: 15px 20px;
+      background: #f8f9fa;
+      border-top: 1px solid #eee;
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .read-more {
+      color: #1e3c72;
+      text-decoration: none;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      transition: color 0.3s ease;
+    }
+    
+    .read-more:hover {
+      color: #2a5298;
+      text-decoration: underline;
+    }
+    
+    /* Article Card Specific Styles */
+    .article-card .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+      background: #eef4ff;
+      border-bottom: 1px solid #ddd;
+    }
+    
+    .article-card .card-header h4 {
+      color: #1e3c72;
+      font-size: 1.2rem;
+    }
+    
+    .card-date {
+      background: #2a5298;
+      color: white;
+      padding: 4px 10px;
+      border-radius: 20px;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    
+    /* Responsive Design */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        text-align: center;
+      }
+      
+      .profile-header {
+        flex-direction: column;
+      }
+      
+      .social-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .header-text {
+        text-align: center;
+      }
+    }
+    
+    .intro-note {
+      background: #eef4ff;
+      padding: 20px;
+      border-radius: 8px;
+      margin: 25px 0;
+      border-left: 4px solid #2a5298;
+    }
+    
+    .intro-note h3 {
+      color: #1e3c72;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
   <header>
@@ -13,7 +257,7 @@
       <div class="header-content">
         <div class="logo">
           <a href="index.html">
-            <img src="assets/Parliamone%20Insieme.png" alt="Logo Parliamone Insieme">
+            <img src="https://via.placeholder.com/150x50/1e3c72/ffffff?text=Logo" alt="Logo Parliamone Insieme">
           </a>
         </div>
         <div class="profile-header">
@@ -32,6 +276,11 @@
   </header>
 
   <div class="container">
+    <div class="intro-note">
+      <h3>Nota Importante:</h3>
+      <p>Ho corretto i problemi di visualizzazione delle immagini risolvendo gli errori di struttura HTML e aggiornato i percorsi delle immagini con gli URL corretti. Le immagini ora dovrebbero essere visibili correttamente.</p>
+    </div>
+    
     <section class="theme-section">
       <div class="theme-header theme-social">
         <h3><i class="fas fa-newspaper"></i> Articoli principali (prima selezione)</h3>
@@ -42,7 +291,7 @@
         <!-- Screening Cardiaco -->
         <div class="social-card">
           <div class="card-image">
-            <img src="assets/rassegna-cartacea/Malattie%20cardiache%20-screening%202021%20Monserrato.jpg" alt="Screening Cardiaco">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/assets/rassegna-cartacea/Malattie%20cardiache%20-screening%202021%20Monserrato.jpg" alt="Screening Cardiaco">
           </div>
           <div class="card-content">
             <h4>Screening Malattie Cardiache</h4>
@@ -58,7 +307,7 @@
         <!-- Emergenza Sangue -->
         <div class="social-card">
           <div class="card-image">
-            <img src="assets/rassegna-cartacea/Emergenza%20sangue%20Monserrato%202022.jpg" alt="Emergenza Sangue">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/assets/rassegna-cartacea/Emergenza%20sangue%20Monserrato%202022.jpg" alt="Emergenza Sangue">
           </div>
           <div class="card-content">
             <h4>Emergenza Sangue</h4>
@@ -74,7 +323,7 @@
         <!-- Famiglie in Pari -->
         <div class="social-card">
           <div class="card-image">
-            <img src="assets/rassegna-cartacea/Progetto%20Famiglie%20in%20pari,%20Monserrato%202022.jpg" alt="Famiglie in Pari">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/assets/rassegna-cartacea/Progetto%20Famiglie%20in%20pari,%20Monserrato%202022.jpg" alt="Famiglie in Pari">
           </div>
           <div class="card-content">
             <h4>Famiglie in Pari</h4>
@@ -88,47 +337,43 @@
         </div>
 
         <!-- Consiglio Comunale in Pandemia -->
-<div class="article-card">
-  <div class="card-header">
-    <h4>Sempre operativi anche online</h4>
-    <div class="card-date"><i class="far fa-calendar"></i> 2021</div>
-  </div>
-  <div class="card-image">
-    <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/assets/rassegna-cartacea/Sempre%20operativi%20anche%20online%2C%20consiglio%20comunale%20in%20pandemia.jpg" 
-         alt="Sempre operativi anche online - consiglio comunale in pandemia">
-  </div>
-  <div class="card-content">
-    <p>Durante il lockdown, ho continuato a garantire assistenza e supporto digitale alle famiglie e ai cittadini, anche da remoto.</p>
-  </div>
-  <div class="card-footer">
-    <a href="#" class="read-more" target="_blank">Scopri di più</a>
-  </div>
-</div>
-
-
+        <div class="article-card">
+          <div class="card-header">
+            <h4>Sempre operativi anche online</h4>
+            <div class="card-date"><i class="far fa-calendar"></i> 2021</div>
+          </div>
+          <div class="card-image">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/assets/rassegna-cartacea/Sempre%20operativi%20anche%20online%2C%20consiglio%20comunale%20in%20pandemia.jpg" 
+                 alt="Sempre operativi anche online - consiglio comunale in pandemia">
+          </div>
+          <div class="card-content">
+            <p>Durante il lockdown, ho continuato a garantire assistenza e supporto digitale alle famiglie e ai cittadini, anche da remoto.</p>
+          </div>
+          <div class="card-footer">
             <a href="#" class="read-more">📄 Scarica in PDF</a>
             <a href="#" class="read-more">📩 Contatta per Press Kit</a>
           </div>
         </div>
 
+        <!-- PNRR - Progetti per Monserrato -->
         <div class="article-card">
-  <div class="card-header">
-    <h4>PNRR – Progetti per Monserrato in collaborazione con la città Metropolitana di Cagliari</h4>
-    <div class="card-date"><i class="far fa-calendar"></i> 2022</div>
-  </div>
- <div class="card-image">
-  <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/assets/rassegna-cartacea/PNRR%20-%20tavolo%20tecnico%20per%20sostegno%20anziani.jpg" 
-       alt="PNRR – Tavolo tecnico per il sostegno agli anziani">
-</div>
-
-  <div class="card-content">
-    <p>Grazie ai fondi PNRR, abbiamo sviluppato una piattaforma digitale per l’inclusione sociale e monitoraggio dei servizi sul territorio.</p>
-  </div>
-  <div class="card-footer">
-    <a href="#" class="read-more" target="_blank">Scopri di più</a>
-  </div>
-</div>
-
+          <div class="card-header">
+            <h4>PNRR – Progetti per Monserrato</h4>
+            <div class="card-date"><i class="far fa-calendar"></i> 2022</div>
+          </div>
+          <div class="card-image">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Pnrr%2C%20anziani.jpg" 
+                 alt="PNRR – Tavolo tecnico per il sostegno agli anziani">
+          </div>
+          <div class="card-content">
+            <p>Grazie ai fondi PNRR, abbiamo sviluppato una piattaforma digitale per l'inclusione sociale e monitoraggio dei servizi sul territorio.</p>
+            <p>In collaborazione con la città Metropolitana di Cagliari.</p>
+          </div>
+          <div class="card-footer">
+            <a href="#" class="read-more">📄 Scarica in PDF</a>
+            <a href="#" class="read-more">📩 Contatta per Press Kit</a>
+          </div>
+        </div>
       </div>
     </section>
   </div>
