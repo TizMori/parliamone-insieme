@@ -1,116 +1,104 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rassegna stampa cartacea | Tiziana Mori</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f4f4f4;
-      margin: 0;
-      padding: 0;
-    }
-
-    .container {
-      max-width: 1000px;
-      margin: auto;
-      padding: 2rem;
-    }
-
-    .press-card {
-      background: white;
-      border-radius: 12px;
-      margin-bottom: 2rem;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      display: flex;
-      gap: 20px;
-      overflow: hidden;
-      transition: transform 0.2s ease;
-    }
-
-    .press-card:hover {
-      transform: scale(1.02);
-    }
-
-    .press-image {
-      width: 40%;
-      object-fit: cover;
-      border-right: 1px solid #eee;
-    }
-
-    .press-text {
-      padding: 1rem;
-      flex-grow: 1;
-    }
-
-    .press-text h3 {
-      margin-top: 0;
-      color: #003366;
-    }
-
-    .quote {
-      font-style: italic;
-      color: #555;
-      margin: 1rem 0;
-    }
-
-    .return-button {
-      display: block;
-      text-align: center;
-      margin-top: 3rem;
-    }
-
-    .return-button a {
-      padding: 10px 20px;
-      background: #003366;
-      color: white;
-      border-radius: 6px;
-      text-decoration: none;
-    }
-
-    .return-button a:hover {
-      background: #0055aa;
-    }
-  </style>
-</head>
-<body>
-
-<div class="container">
-  <h1>🗞️ Rassegna stampa cartacea (2019–2022)</h1>
-  <div class="container">
-  <h1>🗞️ Rassegna stampa cartacea (2019–2022)</h1>
-
-  <p style="font-size: 1.1em; line-height: 1.6;">
-    Ecco una panoramica dei principali interventi e progetti che ho portato avanti durante il mio mandato come Assessora alle Politiche Sociali e Famiglia del Comune di Monserrato, raccontati anche attraverso la stampa cartacea locale e regionale.
-    <br><br>
-    Questa sezione rappresenta una parte del mio percorso amministrativo, a testimonianza dell’impegno costante sul territorio per politiche inclusive, concrete e orientate al benessere delle famiglie, dei minori e delle persone fragili.
-    <br><br>
-    Sono disponibile per approfondimenti, interviste o contributi giornalistici per raccontare la genesi, lo sviluppo e l'impatto dei progetti realizzati. 
-    Per richieste, materiali stampa o press release contattatemi via email: 
-    <a href="mailto:contatti.parliamone.insieme@gmail.com">contatti.parliamone.insieme@gmail.com</a>
-    <br><br>
-    Questo spazio è la base trasparente e documentata da cui ripartire per nuove sfide: porto con me competenze progettuali, esperienza istituzionale e un portfolio di risultati concreti a beneficio della collettività.
+<!-- Sezione: Rassegna Stampa Cartacea -->
+<section class="press-section container">
+  <h2 style="text-align:center; margin-top: 2rem;">📰 Rassegna Stampa Cartacea (2019–2022)</h2>
+  <p style="text-align:center; max-width: 800px; margin: 0 auto 2rem;">
+    Ecco una panoramica dei principali interventi da me promossi come Assessora, riportati anche dalla stampa cartacea. 
+    Per richieste stampa o approfondimenti, resto a disposizione per raccontare l'evoluzione e l'impatto di ciascun progetto.
   </p>
 
+  <div class="press-grid">
 
-  <!-- ESEMPIO ARTICOLO 1 -->
-  <div class="press-card">
-    <img src="immagini-cartacee/Emergenza sangue Monserrato 2022.jpg" alt="Emergenza sangue" class="press-image">
-    <div class="press-text">
-      <h3>Emergenza sangue a Monserrato</h3>
-      <p class="quote">“Con questa iniziativa abbiamo rafforzato la prevenzione e il senso civico nel dono.”</p>
-      <p>Giornata dedicata alla raccolta sangue con AVIS. L’assessora Mori evidenzia l’importanza di educare alla cultura del dono e al monitoraggio sanitario.</p>
+    <!-- Emergenza sangue -->
+    <div class="press-card">
+      <img src="assets/rassegna-cartacea/Emergenza%20sangue%20Monserrato%202022.jpg" alt="Emergenza sangue Monserrato">
+      <div class="press-content">
+        <h3>Emergenza sangue a Monserrato</h3>
+        <p><em>"L’iniziativa nasce per rispondere alla carenza di sangue negli ospedali sardi"</em></p>
+        <p>Promozione AVIS in collaborazione col Comune. Appello ai cittadini a partecipare alla donazione del 15 marzo in via San Lorenzo.</p>
+        <a href="#" class="read-more">📄 Scarica in PDF</a>
+        <a href="mailto:contatti.parliamone.insieme@gmail.com" class="press-kit">📩 Contatta per Press Kit</a>
+      </div>
     </div>
+
+    <!-- Screening cardiaco -->
+    <div class="press-card">
+      <img src="assets/rassegna-cartacea/Malattie%20cardiache%20-%20screening%202021%20Monserrato.jpg" alt="Screening cardiaco Monserrato">
+      <div class="press-content">
+        <h3>Screening cardiaco: boom di visite</h3>
+        <p><em>"Imparare ad alimentarsi in modo corretto e vivere in salute: parte tutto da qui"</em></p>
+        <p>Più di 40 visite effettuate in poche ore. Coinvolta la Croce Rossa e l’amministrazione. Un successo civico di prevenzione.</p>
+        <a href="#" class="read-more">📄 Scarica in PDF</a>
+        <a href="mailto:contatti.parliamone.insieme@gmail.com" class="press-kit">📩 Contatta per Press Kit</a>
+      </div>
+    </div>
+
+    <!-- Famiglie in Pari -->
+    <div class="press-card">
+      <img src="assets/rassegna-cartacea/Progetto%20Famiglie%20in%20pari%2C%20Monserrato%202022.jpg" alt="Famiglie in pari">
+      <div class="press-content">
+        <h3>Famiglie in Pari: sostegno tra famiglie</h3>
+        <p><em>"Mettiamo in contatto chi ha bisogno con chi ha tempo e cuore da offrire"</em></p>
+        <p>Coinvolgimento delle reti comunitarie, in collaborazione con cooperative sociali locali. Percorsi educativi e di accompagnamento.</p>
+        <a href="#" class="read-more">📄 Scarica in PDF</a>
+        <a href="mailto:contatti.parliamone.insieme@gmail.com" class="press-kit">📩 Contatta per Press Kit</a>
+      </div>
+    </div>
+
   </div>
+</section>
 
-  <!-- Aggiungi altri .press-card seguendo questo schema -->
-
-  <div class="return-button">
-    <a href="linee-programmatiche.html">⬅️ Torna alla pagina Linee Programmatiche</a>
-  </div>
-</div>
-
-</body>
-</html>
+<!-- Stili CSS -->
+<style>
+.press-section {
+  margin: 40px 0;
+}
+.press-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 30px;
+}
+.press-card {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+.press-card:hover {
+  transform: translateY(-5px);
+}
+.press-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+.press-content {
+  padding: 20px;
+}
+.press-content h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  color: #003366;
+}
+.press-content em {
+  color: #666;
+  font-style: italic;
+  display: block;
+  margin-bottom: 10px;
+}
+.read-more, .press-kit {
+  display: inline-block;
+  margin-right: 10px;
+  margin-top: 10px;
+  background-color: #003366;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.3s ease;
+}
+.read-more:hover, .press-kit:hover {
+  background-color: #005999;
+}
+</style>
