@@ -819,6 +819,15 @@ footer {
   }
   
   .social-card {
+
+      .citazione-breve {
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #444;
+  margin: 10px 0;
+  opacity: 0.85;
+}
+
     max-width: 100%;
   }
 }
