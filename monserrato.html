@@ -4,454 +4,1080 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Esperienza politica a Monserrato | Tiziana Mori</title>
- <!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Esperienza politica a Monserrato | Tiziana Mori</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="container">
-
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #003366;
+      --primary-light: #1a4d80;
+      --secondary: #8B0000;
+      --secondary-light: #a52a2a;
+      --accent: #FFD700;
+      --accent-light: #ffdf40;
+      --light: #f8f9fa;
+      --light-alt: #eef2f6;
+      --dark: #212529;
+      --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      --transition: all 0.3s ease;
+      --border-radius: 12px;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(135deg, #f0f4f8 0%, #e2e8f0 100%);
+      background-attachment: fixed;
+      padding-bottom: 40px;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    
+    /* Header Styling */
+    header {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      padding: 30px 0;
+      border-radius: 0 0 30px 30px;
+      box-shadow: var(--shadow);
+      margin-bottom: 40px;
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 5px;
+      background: var(--accent);
+    }
+    
+    .header-content {
+      position: relative;
+      z-index: 2;
+    }
+    
+    .logo {
+      margin-bottom: 20px;
+    }
+    
+    .logo img {
+      max-width: 300px;
+      filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+    }
+    
+    .profile-header {
+      position: relative;
+      padding-top: 20px;
+    }
+    
+    .profile-img {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid white;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+      transition: var(--transition);
+    }
+    
+    .profile-img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+    }
+    
+    h1 {
+      font-size: 2.8rem;
+      margin: 20px 0 10px;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+      letter-spacing: 1px;
+    }
+    
+    .tagline {
+      font-size: 1.4rem;
+      font-weight: 300;
+      opacity: 0.9;
+      margin-bottom: 10px;
+    }
+    
+    /* Section Styling */
+    .section-box {
+      background: white;
+      border-radius: var(--border-radius);
+      padding: 40px;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+      border-left: 5px solid var(--accent);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .section-alt {
+      background: var(--light-alt);
+      border-left: 5px solid var(--secondary);
+    }
+    
+    .section-box::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(to right, var(--primary), var(--secondary));
+      opacity: 0.1;
+    }
+    
+    .section-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    h2 {
+      color: var(--primary);
+      font-size: 2.2rem;
+      margin-bottom: 25px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    h2::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 4px;
+      background: var(--accent);
+      border-radius: 2px;
+    }
+    
+    .section-subtitle {
+      font-size: 1.2rem;
+      color: var(--secondary);
+      margin-bottom: 20px;
+      font-weight: 500;
+      display: block;
+      background: rgba(139, 0, 0, 0.05);
+      padding: 10px 15px;
+      border-radius: 6px;
+    }
+    
+    p {
+      margin-bottom: 20px;
+      font-size: 1.1rem;
+      color: #444;
+    }
+    
+    /* Article Cards */
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 30px;
+      margin-top: 30px;
+    }
+    
+    .article-card {
+      background: white;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+      transition: var(--transition);
+      border: 1px solid #eee;
+      position: relative;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .article-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    }
+    
+    .article-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--primary);
+    }
+    
+    .article-card.alt::before {
+      background: var(--secondary);
+    }
+    
+    .article-card h3 {
+      font-size: 1.3rem;
+      padding: 20px 20px 10px;
+      color: var(--primary);
+    }
+    
+    .article-card.alt h3 {
+      color: var(--secondary);
+    }
+    
+    .article-card p {
+      padding: 0 20px 15px;
+      font-size: 1rem;
+      color: #555;
+      flex-grow: 1;
+    }
+    
+    .article-card a {
+      display: block;
+      padding: 15px 20px;
+      background: #f8f9fa;
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: var(--transition);
+      border-top: 1px solid #eee;
+      display: flex;
+      align-items: center;
+    }
+    
+    .article-card a i {
+      margin-right: 8px;
+    }
+    
+    .article-card a::after {
+      content: "→";
+      margin-left: 8px;
+      transition: transform 0.3s ease;
+    }
+    
+    .article-card a:hover {
+      background: var(--primary);
+      color: white;
+    }
+    
+    .article-card.alt a:hover {
+      background: var(--secondary);
+    }
+    
+    .article-card a:hover::after {
+      transform: translateX(5px);
+    }
+    
+    .article-card ul {
+      padding: 0 20px 15px;
+      list-style-type: none;
+      flex-grow: 1;
+    }
+    
+    .article-card li {
+      margin-bottom: 10px;
+      padding-left: 25px;
+      position: relative;
+    }
+    
+    .article-card li::before {
+      content: "•";
+      position: absolute;
+      left: 0;
+      color: var(--accent);
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+    
+    /* Image Gallery */
+    .columns {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin: 40px 0;
+    }
+    
+    .col {
+      position: relative;
+      overflow: hidden;
+      border-radius: var(--border-radius);
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .col:hover {
+      transform: translateY(-5px);
+    }
+    
+    .col img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+    
+    .col:hover img {
+      transform: scale(1.05);
+    }
+    
+    .col p {
+      padding: 15px;
+      background: white;
+      margin: 0;
+      font-size: 0.95rem;
+      text-align: center;
+      font-style: italic;
+      color: #555;
+    }
+    
+    .framed-photo {
+      margin: 40px auto;
+      max-width: 700px;
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+      border: 1px solid rgba(0, 0, 0, 0.1);
+    }
+    
+    .framed-photo img {
+      width: 100%;
+      display: block;
+    }
+    
+    .framed-photo p {
+      padding: 15px;
+      background: white;
+      text-align: center;
+      margin: 0;
+      font-style: italic;
+      color: #666;
+    }
+    
+    /* Photo Grid */
+    .photo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 20px;
+      margin: 30px 0;
+    }
+    
+    .photo-item {
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: var(--transition);
+    }
+    
+    .photo-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .photo-item img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      display: block;
+    }
+    
+    .photo-item p {
+      padding: 15px;
+      background: white;
+      margin: 0;
+      font-size: 0.9rem;
+      text-align: center;
+    }
+    
+    /* Contact Section */
+    #dialogo {
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: white;
+      border-radius: var(--border-radius);
+      padding: 50px 40px;
+      text-align: center;
+      margin-top: 50px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    
+    #dialogo::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: var(--accent);
+    }
+    
+    #dialogo h2 {
+      color: white;
+      margin-bottom: 25px;
+    }
+    
+    #dialogo h2::after {
+      background: var(--accent);
+      width: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    
+    .email-box {
+      background: rgba(255, 255, 255, 0.15);
+      border-radius: 10px;
+      padding: 20px 30px;
+      display: inline-block;
+      transition: var(--transition);
+      margin-bottom: 20px;
+      backdrop-filter: blur(5px);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    
+    .email-box:hover {
+      background: rgba(255, 255, 255, 0.25);
+      transform: translateY(-3px);
+    }
+    
+    .email-box a {
+      color: white;
+      font-size: 1.4rem;
+      text-decoration: none;
+      font-weight: 600;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .email-box a i {
+      margin-right: 10px;
+    }
+    
+    .replicable-message {
+      background: rgba(255, 215, 0, 0.15);
+      border-radius: 8px;
+      padding: 25px;
+      margin-top: 25px;
+      font-size: 1.1rem;
+      font-style: italic;
+      border: 1px dashed var(--accent);
+      max-width: 700px;
+      margin: 35px auto 0;
+      position: relative;
+      color: white; /* Testo bianco per migliore leggibilità */
+    }
+    
+    .replicable-message::before {
+      content: "“";
+      position: absolute;
+      top: -25px;
+      left: 20px;
+      font-size: 5rem;
+      color: rgba(255, 215, 0, 0.3);
+      font-family: Georgia, serif;
+    }
+    
+    /* Buttons */
+    .enter-btn {
+      display: inline-block;
+      background: var(--primary);
+      color: white;
+      padding: 15px 35px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      border: 2px solid var(--primary);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      margin: 20px 0;
+    }
+    
+    .enter-btn:hover {
+      background: transparent;
+      color: var(--primary);
+      transform: translateY(-3px);
+      box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    .print-btn {
+      display: block;
+      background: var(--secondary);
+      color: white;
+      padding: 15px 30px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: var(--transition);
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      margin: 40px auto;
+      text-align: center;
+      max-width: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .print-btn i {
+      margin-right: 10px;
+    }
+    
+    .print-btn:hover {
+      background: var(--secondary-light);
+      transform: translateY(-3px);
+      box-shadow: 0 7px 20px rgba(0, 0, 0, 0.15);
+    }
+    
+    /* Footer */
+    footer {
+      background: var(--dark);
+      color: white;
+      padding: 40px 0 20px;
+      text-align: center;
+      margin-top: 60px;
+      border-radius: 30px 30px 0 0;
+    }
+    
+    footer p {
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+    
+    .disclaimer {
+      font-size: 0.85rem;
+      max-width: 800px;
+      margin: 0 auto 15px;
+      opacity: 0.7;
+    }
+    
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .fade-in {
+      animation: fadeIn 0.8s ease forwards;
+    }
+    
+    /* Responsive */
+    @media (max-width: 992px) {
+      .article-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      }
+    }
+    
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2.2rem;
+      }
+      
+      .section-box {
+        padding: 25px;
+      }
+      
+      .columns {
+        grid-template-columns: 1fr;
+      }
+      
+      .email-box a {
+        font-size: 1.1rem;
+      }
+      
+      .framed-photo {
+        margin: 30px 0;
+      }
+    }
+    
+    @media (max-width: 576px) {
+      h1 {
+        font-size: 1.8rem;
+      }
+      
+      h2 {
+        font-size: 1.8rem;
+      }
+      
+      .section-box {
+        padding: 20px;
+      }
+      
+      .email-box {
+        padding: 15px;
+      }
+      
+      .email-box a {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
     <header>
-      <!DOCTYPE html>
-<html lang="it">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Esperienza politica a Monserrato | Tiziana Mori</title>
-       <div class="logo">
-        <a href="index.html"><img src="assets/Parliamone Insieme.png" alt="Logo"></a>
-      </div>
-      <div class="profile-header">
-        <img src="assets/Prof.ssa%20Tiziana%20MORI.jpg" alt="Tiziana Mori" class="profile-img">
-        <h1>Tiziana Mori</h1>
-        <p class="tagline">Carpe diem</p>
+      <div class="header-content">
+        <div class="logo">
+          <a href="index.html"><img src="assets/Parliamone Insieme.png" alt="Logo"></a>
+        </div>
+        <div class="profile-header">
+          <img src="assets/Prof.ssa%20Tiziana%20MORI.jpg" alt="Tiziana Mori" class="profile-img">
+          <h1>Tiziana Mori</h1>
+          <p class="tagline">Carpe diem</p>
+        </div>
       </div>
     </header>
 
-    <section class="section-box">
+    <section class="section-box fade-in">
       <h2>Esperienza politica a Monserrato (2019–2022)</h2>
-      <p class="section-subtitle">Sezione del sito "Parliamone Insieme" di Tiziana Mori</p>
+      <span class="section-subtitle">Sezione del sito "Parliamone Insieme" di Tiziana Mori</span>
       <p>Mi sono occupata di politiche sociali, partecipazione civica, inclusione e servizi alla famiglia. Ho promosso interventi per la cittadinanza attiva, il contrasto alla povertà, il sostegno ai caregiver, la salute delle donne e il benessere familiare.</p>
-   <div class="framed-photo" style="margin-top: 2rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-  <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Albo%20pretorio%20Assossore%20Tiziana%20MORI.jpg" alt="Tiziana Mori Assessore - Albo Pretorio" style="width:100%; height:auto; border-radius:10px;">
-  <p style="text-align:center; font-style:italic; margin-top: 0.5rem;">Albo Pretorio – Nomina di Tiziana Mori come Assessora a Monserrato</p>
-</div>
+      
+      <div class="framed-photo">
+        <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Albo%20pretorio%20Assossore%20Tiziana%20MORI.jpg" alt="Tiziana Mori Assessore - Albo Pretorio">
+        <p>Albo Pretorio – Nomina di Tiziana Mori come Assessora a Monserrato</p>
+      </div>
+    </section>
 
-  
-
-</div>
-
-      <section class="section-box">
-  <h2>📌 Attività amministrativa a Monserrato</h2>
-
-  <div class="article-card">
-    <h3>Educare Insieme con CESVI</h3>
-    <p>Il Comune di Monserrato ha aderito alla proposta progettuale della Fondazione CESVI per il bando "Educare Insieme", promuovendo iniziative educative innovative per l'infanzia e l'adolescenza.</p>
-    <a href="https://www.castedduonline.it/monserrato-aderisce-alla-proposta-progettuale-della-fondazione-cesvi-per-il-bando-educare-insieme/" target="_blank">Leggi l'articolo</a>
-  </div>
-
-  <div class="article-card">
-    <h3>Screening gratuiti a Monserrato</h3>
-    <p>Grande partecipazione all'iniziativa sanitaria con screening gratuiti aperti alla cittadinanza: un successo di prevenzione e impegno civico.</p>
-    <a href="https://www.castedduonline.it/screening-gratuiti-tutti-in-fila-sotto-la-pioggia-boom-di-richieste-a-monserrato/" target="_blank">Leggi l'articolo</a>
-  </div>
-
-  <div class="article-card">
-    <h3>Bonus nidi gratuiti</h3>
-    <p>Pubblicata la graduatoria per i bonus nidi gratuiti nel Comune di Monserrato: un sostegno concreto alle famiglie.</p>
-    <a href="https://www.castedduonline.it/monserrato-ecco-la-graduatoria-sui-bonus-nidi-gratuiti/" target="_blank">Leggi l'articolo</a>
-  </div>
-</section>
-
-      <div class="article-card">
-  <h3>Screening della popolazione</h3>
-  <p>Tamponi gratuiti e screening per la popolazione a Monserrato: tutti negativi i test effettuati nella giornata.</p>
-  <a href="https://www.castedduonline.it/monserrato-al-via-lo-screening-della-popolazione-tutti-negativi-i-tamponi-effettuati-oggi/" target="_blank">Leggi l'articolo</a>
-</div>
-
-      <div class="article-card">
-  <h3>Accordo PLUS21 approvato</h3>
-  <p>Monserrato: approvato in Consiglio Comunale l’accordo per l’integrazione dei servizi sociali. Voto unanime.</p>
-  <a href="https://www.castedduonline.it/monserrato-accordo-del-plus21-in-consiglio-comunale-approvazione-allunanimita/" target="_blank">Leggi l'articolo</a>
-</div>
-
-      <div class="article-card">
-  <h3>Giornata INDIFESA</h3>
-  <p>Il Comune si colora di arancione per dire no alla violenza di genere e promuovere l’empowerment femminile.</p>
-  <a href="https://www.castedduonline.it/monserrato-si-colora-di-arancione-per-indifesa-cronaca-di-una-giornata-speciale/" target="_blank">Leggi l'articolo</a>
-</div>
-
-      <div class="article-card">
-  <h3>Supporto a partite IVA e negozianti</h3>
-  <p>Un piano speciale per sostenere economicamente le piccole attività commerciali prive di ammortizzatori sociali.</p>
-  <a href="https://www.castedduonline.it/monserrato-un-piano-speciale-per-le-partite-iva-e-i-negozianti-aiutiamo-anche-chi-non-ha-ammortizzatori-sociali/" target="_blank">Leggi l'articolo</a>
-</div>
-
-<div class="article-card">
-  <h3>Progetto contro il cyberbullismo</h3>
-  <p>Iniziativa di prevenzione al cyberbullismo che coinvolge diversi comuni del Cagliaritano, inclusa Monserrato.</p>
-  <a href="https://www.castedduonline.it/cyberbullismo-un-progetto-per-la-prevenzione-coinvolge-diversi-comuni-del-cagliaritano/" target="_blank">Leggi l'articolo</a>
-</div>
-
-<div class="article-card">
-  <h3>Giornata del Dono</h3>
-  <p>Scuole, imprese e cittadini in campo per la bellezza del regalo. Il Comune di Monserrato partecipa con entusiasmo.</p>
-  <a href="https://www.castedduonline.it/monserrato-aderisce-alla-giornata-del-dono-scuole-imprese-e-cittadini-in-campo-per-la-bellezza-del-regalo/" target="_blank">Leggi l'articolo</a>
-</div>
-
-<div class="article-card">
-  <h3>Progetto con Unica Radio</h3>
-  <p>Accordo tra Comune e Unica Radio per avviare un progetto innovativo che coinvolge 10 giovani.</p>
-  <a href="https://www.castedduonline.it/monserrato-ce-laccordo-tra-comune-e-unica-radio-via-a-un-progetto-per-10-giovani/" target="_blank">Leggi l'articolo</a>
-</div>
-
-<div class="article-card">
-  <h3>Encomio per le forze dell’ordine</h3>
-  <p>Il Comune premia con un encomio le forze dell’ordine per l’impegno durante la pandemia.</p>
-  <a href="https://www.castedduonline.it/monserrato-encomio-speciale-per-gli-angeli-della-pandemia-premiamo-limpegno-delle-forze-dellordine/" target="_blank">Leggi l'articolo</a>
-</div>
-
-<div class="article-card">
-  <h3>Cittadella Universitaria</h3>
-  <p>Progetto di rilancio della cittadella universitaria con il coinvolgimento del Comune di Monserrato.</p>
-  <a href="https://www.castedduonline.it/cittadella-monserrato-universita/" target="_blank">Leggi l'articolo</a>
-</div>
-
-<div class="article-card">
-  <h3>Approvazione bilancio</h3>
-  <p>Il bilancio di previsione di Monserrato per 32 milioni di euro è stato approvato.</p>
-  <a href="https://www.castedduonline.it/monserrato-approvato-il-bilancio-di-previsione-per-32-milioni/" target="_blank">Leggi l'articolo</a>
-</div>
-
-<div class="article-card">
-  <h3>Seminario contro il bullismo</h3>
-  <p>Evento formativo a Monserrato sul fenomeno del bullismo, con partecipazione scolastica e istituzionale.</p>
-  <a href="https://www.castedduonline.it/seminario-sul-fenomeno-del-bullismo-a-monserrato/" target="_blank">Leggi l'articolo</a>
-</div>
+    <section class="section-box section-alt fade-in">
+      <h2>📌 Attività amministrativa a Monserrato</h2>
 
       <div class="article-grid">
-  <div class="article-card">
-    <h3>Centro Famiglia – Avvio e attivazione</h3>
-    <p>Webinar online per operatori e famiglie per l'attivazione del Centro Famiglia di Monserrato.</p>
-    <a href="https://www.cagliaripost.com/monserrato-centro-famiglia-plus-21-webinar-on-line-per-operatori-e-docenti/" target="_blank">Leggi l'articolo</a>
-  </div>
-
-  <div class="article-card alt">
-    <h3>REIS e Terzo Settore</h3>
-    <p>Collaborazione tra Comune e Terzo Settore per misure di contrasto alla povertà.</p>
-    <a href="https://www.cagliaripost.com/monserrato-assessorato-politiche-sociali-comunica-lapertura-delle-procedure-reis-tutti-le-opportunita-in-corso-in-collaborazione-con-il-terzo-settore/" target="_blank">Leggi l'articolo</a>
-  </div>
-        
-<div class="article-card alt">
-  <h3>Monserrato: Welfare, coprogrammazione e bandi</h3>
-  <p>Durante il mio mandato ho promosso l’uso degli strumenti di coprogrammazione per attrarre risorse e attivare progettualità nel sociale, coinvolgendo il Terzo Settore.</p>
-  <p><strong>Rassegna stampa:</strong></p>
-  <ul>
-    <li><a href="https://www.youtg.net/canali/dai-comuni/30198-il-comune-di-monserrato-chiama-cercansi-partner-per-progetti-sul-welfare" target="_blank">YouTG – Cercansi partner</a></li>
-    <li><a href="https://www.cagliaripost.com/monserrato-lassessorato-politiche-sociali-e-famiglia-cerca-partner-progettuali-per-bandi-sul-welfare/" target="_blank">CagliariPost – Partner progettuali</a></li>
-    <li><a href="https://www.cagliaripost.com/monserrato-bando-edu-care-in-comune-due-progetti-in-co-progettazione-con-il-terzo-settore/" target="_blank">CagliariPost – Co-progettazione EduCare</a></li>
-    <li><a href="https://www.facebook.com/castedduonline/posts/4199487956752674/" target="_blank">Casteddu Online – Avviso pubblico</a></li>
-  </ul>
-</div>
-
-<div class="article-card">
-  <h3>Inclusione e progettazione sociale</h3>
-  <p>Monserrato ha partecipato a diversi bandi nazionali e regionali per favorire l’inclusione e il benessere delle persone fragili.</p>
-  <ul>
-    <li><a href="https://www.cagliaripost.com/comune-di-monserrato-riapertura-bando-includis%EF%BF%BC/" target="_blank">Riapertura bando Includis</a></li>
-    <li><a href="https://www.cagliaripost.com/monserrato-partecipazione-al-progetto-ministeriale-edu-care-in-comune/" target="_blank">Partecipazione EduCare</a></li>
-    <li><a href="https://www.castedduonline.it/assistenza-ad-anziani-e-disabili-a-monserrato-confermata-vanno-avanti-i-progetti-del-plus-21/" target="_blank">Progetti del PLUS 21</a></li>
-  </ul>
-</div>
-
-    
-  <div class="article-card">
-    <h3>Webinar PLUS 21</h3>
-    <p>Formazione su conflitti adolescenziali dedicata a operatori scolastici e famiglie.</p>
-    <a href="https://www.cagliaripost.com/comune-di-monserrato-plus-21-webinar-conflitti-adolescenziali/" target="_blank">Leggi l'articolo</a>
-  </div>
-
-  <div class="article-card alt">
-    <h3>Centro Famiglia Via Monte Arqueri</h3>
-    <p>Nuovo spazio stabile per famiglie, operatori e sostegno alla genitorialità.</p>
-    <a href="https://www.latestata.it/news/monserato-apre-il-centro-famiglia/" target="_blank">Leggi l'articolo</a>
-  </div>
-
-  <div class="article-card">
-    <h3>Bando "Mi prendo cura"</h3>
-    <p>Misura di supporto ai caregiver e disabilità grave con contributi regionali.</p>
-    <a href="https://www.castedduonline.it/monserrato-aderisce-al-bando-mi-prendo-cura-per-i-disabili-gravi/" target="_blank">Leggi l'articolo</a>
-  </div>
-
-  <div class="article-card alt">
-    <h3>Accordo PLUS 21</h3>
-    <p>Integrazione dei servizi per famiglie e fragilità approvato all'unanimità.</p>
-    <a href="https://www.castedduonline.it/monserrato-accordo-del-plus21-in-consiglio-comunale-approvazione-allunanimita/" target="_blank">Leggi l'articolo</a>
-  </div>
-
-  <div class="article-card">
-    <h3>Sussidi familiari</h3>
-    <p>Domande aperte per sussidi economici a sostegno delle famiglie residenti.</p>
-    <a href="https://www.latestata.it/news/in-sardegna/monserrato/monserrato-presentazione-domande-per-i-sussidi-familiari/" target="_blank">Leggi l'articolo</a>
-  </div>
-
-  <div class="article-card alt">
-    <h3>Prevenzione tumore al seno</h3>
-    <p>Campagne di prevenzione e iniziative solidali a favore delle donne colpite da tale patologia.</p>
-    <a href="https://www.castedduonline.it/monserrato-lotta-contro-il-cancro-al-seno-il-comune-e-solidale-con-le-donne-colpite-dal-tumore/" target="_blank">Leggi l'articolo</a>
-  </div>
-
-  <div class="article-card">
-    <h3>Cittadinanza attiva</h3>
-    <p>Progetto di coinvolgimento dei cittadini e incontri nei quartieri.</p>
-    <a href="https://www.cagliaripost.com/monserrato-tornano-gli-appuntamenti-con-il-progetto-di-cittadinanza-attiva-sardegna/" target="_blank">Leggi l'articolo</a>
-  </div>
-
-  <div class="article-card alt">
-    <h3>Sostegno anziani non autosufficienti</h3>
-    <p>Collaborazione tra Comune, Regione e ANCI per servizi agli anziani.</p>
-    <a href="https://www.castedduonline.it/monserrato-incontro-tra-comune-anci-e-regione-per-il-sostegno-agli-anziani-non-autosufficienti/" target="_blank">Leggi l'articolo</a>
-  </div>
-
-  <div class="article-card">
-    <h3>Eurodesk Monserrato</h3>
-    <p>Punto informativo riaperto per opportunità europee rivolte ai giovani.</p>
-    <a href="https://www.castedduonline.it/monserrato-eurtodesk/" target="_blank">Leggi l'articolo</a>
-  </div>
-
-  <div class="article-card alt">
-    <h3>Bilancio per i cittadini</h3>
-    <p>Risorse per famiglie e trasparenza sulle misure economiche adottate.</p>
-    <a href="https://www.castedduonline.it/monserrato-soldi/" target="_blank">Leggi l'articolo</a>
-  </div>
-
-  <div class="article-card">
-    <h3>Manifesto INDIFESA</h3>
-    <p>Aderenza del Comune alla campagna per i diritti delle bambine e ragazze.</p>
-    <a href="https://www.castedduonline.it/giornata-mondiale-delle-bambine-e-delle-ragazze-il-comune-di-monserrato-aderisce-al-manifesto-indifesa/" target="_blank">Leggi l'articolo</a>
-  </div>
-
-  <div class="article-card alt">
-    <h3>Supporto profughi ucraini</h3>
-    <p>Equipe dedicata al ricongiungimento familiare per cittadini ucraini.</p>
-    <a href="https://www.castedduonline.it/monserrato-una-equipe-per-agevolare-i-ricongiungimenti-familiari-dei-profughi-ucraini/" target="_blank">Leggi l'articolo</a>
-  </div>
-
-  <div class="article-card">
-    <h3>Comuni amici della famiglia</h3>
-    <p>Monserrato entra nella rete nazionale per politiche familiari inclusive.</p>
-    <a href="https://www.cagliaripost.com/monserrato-entra-nel-network-europeo-comuni-amici-famiglia/" target="_blank">Leggi l'articolo</a>
-  </div>
-
-  <div class="article-card alt">
-    <h3>Giornata dei nonni</h3>
-    <p>Evento speciale in collaborazione con UNICEF per celebrare i nonni.</p>
-    <a href="https://www.castedduonline.it/monserrato-la-giunta-locci-organizza-un-evento-in-collaborazione-con-lunicef-per-festeggiare-i-nonni/" target="_blank">Leggi l'articolo</a>
-  </div>
-
-  <div class="article-card">
-    <h3>Sportello Europa</h3>
-    <p>Riapertura dello sportello per accompagnare giovani e lavoro.</p>
-    <a href="https://www.castedduonline.it/monserrato-il-comune-lavora-in-smart-working-riapre-anche-lo-sportello-europa/" target="_blank">Leggi l'articolo</a>
-  </div>
-       </div>
-       <div class="article-grid">
-  <!-- Articolo 1 -->
-  <div class="article-card">
-    <h3>Coprogettazione e cittadinanza attiva</h3>
-    <p>Progetto per il coinvolgimento diretto del territorio nelle scelte sociali del Comune.</p>
-    <a href="https://www.cagliaripost.com/comune-di-monserrato-e-cittadinanza-attiva-progetto-di-coprogettazione-sociale-e-coinvolgimento-del-territorio%ef%bf%bc/" target="_blank">Leggi l'articolo</a>
-  </div>
-
-  <!-- Articolo 2 -->
-  <div class="article-card alt">
-    <h3>Avviso regionale "Primi Passi"</h3>
-    <p>Manifestazione d'interesse per il bando dedicato ai servizi per l'infanzia e le famiglie.</p>
-    <a href="https://www.cagliaripost.com/monserrato-manifestazione-interesse-per-avviso-regionale-primi-passi/" target="_blank">Leggi l'articolo</a>
-  </div>
-
-  <!-- Articolo 3 -->
-  <div class="article-card">
-    <h3>Processione Beata Vergine</h3>
-    <p>Partecipazione compatta della Giunta tutta al femminile alla tradizionale processione.</p>
-    <a href="https://www.castedduonline.it/monserrato-la-giunta-in-rosa-sfila-compatta-tutte-le-donne-alla-processione-della-beata-vergine/" target="_blank">Leggi l'articolo</a>
-  </div>
-
-  <!-- Articolo 4 (Rassegna Stampa) -->
-  <div class="article-card alt">
-    <h3>Monserrato: supporto psicologico in tempi di Covid-19</h3>
-    <p>Iniziativa per lo stress da pandemia con sportello d'ascolto e seminario online dedicato.</p>
-    <p><strong>Rassegna stampa:</strong></p>
-    <ul>
-      <li><a href="https://www.cagliaripost.com/monserrato-seminario-on-line-sul-disagio-psicologico-da-covid-19/" target="_blank">Cagliari Post</a></li>
-      <li><a href="https://www.castedduonline.it/monserrato-attivo-un-seminario-per-gestire-stress-e-disagio-da-covid-19/" target="_blank">Casteddu Online</a></li>
-    </ul>
-  </div>
- </div>
-
-<!-- Sezione immagini aggiuntive -->
-<div class="columns">
-  <div class="col">
-    <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/CentroEurodesk.Monserrato.jpg" alt="Centro Eurodesk" style="width:100%; border-radius:8px;">
-    <p style="text-align:center; font-style:italic;">Con me, Monserrato è diventato Centro Eurodesk e punto di riferimento in tutta la città Metropolitana di Cagliari</p>
-  </div>
-  <div class="col">
-    <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/parco%20polifunzionale%20via%20Caracalla.jpg" alt="Parco via Caracalla" style="width:100%; border-radius:8px;">
-    <p style="text-align:center; font-style:italic;">Apertura del parco polifunzionale di via Caracalla</p>
-  </div>
-  <div class="col">
-    <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Dono%20Day%20Monserrato.jpg" alt="Dono Day" style="width:100%; border-radius:8px;">
-    <p style="text-align:center; font-style:italic;">Evento Dono Day per famiglie in difficoltà</p>
-  </div>
-</div>
-
-<!-- Video Facebook -->
-<div style="margin-top:2rem;">
-  <h3>Monserrato: giornata contro la violenza sulle donne</h3>
-  <p style="font-style:italic;">Giunta e Consiglio Comunale uniti per la sensibilizzazione contro la violenza di genere.</p>
-  <a href="https://www.facebook.com/nicola.espis/videos/1337206890032002" target="_blank">Guarda il video su Facebook</a>
-</div>
-
-<!-- Foto evento + commento -->
-<div class="columns">
-  <div class="col">
-    <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/giornata%20internazionale%20contro%20la%20violenza%20sulle%20donne%202021%2C%20Monserrato.jpg" alt="Violenza contro le donne" style="width:100%; border-radius:8px;">
-    <p style="text-align:center;">
-      🛑Mi è sempre piaciuto collaborare e coinvolgere tutti "per metterci la faccia"<br>
-      soprattutto quando sono le Istituzioni a doversi impegnare per contrastare la violenza contro le donne.<br>
-      Questo è stato uno dei miei ultimi eventi organizzati su questo argomento come Assessore a #Monserrato<br>
-      L'intero Consiglio comunale e la Giunta UNITI<br>
-      Grazie a tutti!!!
-    </p>
-  </div>
-  <div class="col">
-    <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Regalo%20in%20sospeso.jpg" alt="Regalo in sospeso" style="width:100%; border-radius:8px;">
-    <p style="text-align:center; font-style:italic;">Evento "Regalo in sospeso - Aspettando il Santo Natale a Monserrato"</p>
-  </div>
-</div>
-
-</div>
-
-      <div class="columns">
-        <div class="col">
-          <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/apertura%20Sportello%20Famiglia-Network%20Family.jpg" alt="Sportello Famiglia" style="width:100%; border-radius:8px;">
-       <p style="text-align:center; font-style:italic;">Ingresso del Comune di Monserrato nel Network Comuni Amici della Famiglia</p>
-
+        <div class="article-card">
+          <h3>Educare Insieme con CESVI</h3>
+          <p>Il Comune di Monserrato ha aderito alla proposta progettuale della Fondazione CESVI per il bando "Educare Insieme", promuovendo iniziative educative innovative per l'infanzia e l'adolescenza.</p>
+          <a href="https://www.castedduonline.it/monserrato-aderisce-alla-proposta-progettuale-della-fondazione-cesvi-per-il-bando-educare-insieme/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
         </div>
-        <div class="col">
-          <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/evento%20sul%20contrasto%20al%20Bullismo.jpg" alt="Evento Bullismo" style="width:100%; border-radius:8px;">
-        <p style="text-align:center; font-style:italic;">Evento in Monserratoteca rivolto a seminari e convegni sul Contrasto al Bullismo in collaborazione con Arka Eventi culturali</p>
-
-        </div>
-        <div class="col">
-          <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/celebrazione%20matrimonio.jpg" alt="Celebrazione matrimonio" style="width:100%; border-radius:8px;">
-        <p style="text-align:center; font-style:italic;">Celebrazione matrimonio nella Sala Comunale durante l'emergenza covid-19</p>
-
-        </div>
-       <div class="col">
-  <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/avis.monserrato.jpg" alt="Avis Monserrato" style="width:100%; border-radius:8px;">
-  <p style="text-align:center; font-style:italic;">Iniziativa con AVIS provinciale a Monserrato</p>
-</div>
-
-         <div class="article-card alt">
-  <div style="display: flex; gap: 10px; flex-wrap: wrap; justify-content: center;">
-    <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Endometriosi%20Monserrato%2C%202021.jpg" alt="Endometriosi 1" style="max-width: 100%; width: 45%; border-radius: 8px;">
-    <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/endometriosi%2C%20illuminazione%20edifici%20comunali.jpg" alt="Endometriosi 2" style="max-width: 100%; width: 45%; border-radius: 8px;">
-    <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/evento%20endometriosi.jpg" alt="Endometriosi 3" style="max-width: 100%; width: 45%; border-radius: 8px;">
-  </div>
-  <h3>Endometriosi: informare per non lasciare sole le donne</h3>
-  <p>Dal mondo del volontariato ho imparato – e oggi insegno ai miei studenti – che l’unione fa la forza. Con questa convinzione abbiamo portato avanti, a Monserrato, una campagna pubblica per rompere il silenzio sull’endometriosi.</p>
-  <a href="https://www.facebook.com/story.php?story_fbid=4135377636507341&id=100001054374802" target="_blank">📌 Guarda il post completo su Facebook</a>
 
         <div class="article-card alt">
-  <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px;">
-    <div style="flex: 1 1 60%;">
-      <h3>Progetto “Famiglie in Pari” – Monserrato 2022</h3>
-      <p>Iniziativa promossa dall’Assessorato Politiche Sociali per affiancare famiglie fragili con famiglie solidali, nel quadro di un percorso condiviso con il Terzo Settore.</p>
-      <p>Tre incontri pubblici con la comunità e le parrocchie per promuovere l’affido leggero e le reti comunitarie familiari.</p>
-      <a href="https://www.facebook.com/photo/?fbid=2740193569359095&set=a.479215105456964" target="_blank">🔗 Guarda il post su Facebook</a>
-    </div>
-    <div style="flex: 1 1 35%;">
-      <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Progetto%20Famiglie%20in%20PARI%2C%20Assessore%20MORI.jpg" alt="Famiglie in Pari - Assessora Mori" style="width: 100%; border-radius: 8px;">
-    </div>
-  </div>
-</div>
+          <h3>Screening gratuiti a Monserrato</h3>
+          <p>Grande partecipazione all'iniziativa sanitaria con screening gratuiti aperti alla cittadinanza: un successo di prevenzione e impegno civico.</p>
+          <a href="https://www.castedduonline.it/screening-gratuiti-tutti-in-fila-sotto-la-pioggia-boom-di-richieste-a-monserrato/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
 
-           <div class="card">
-  <div class="category"> Attività di Sostegno alla Famiglia in collaborazione con AFS per Supporto psicologico in pandemia covid-19. Mediazione familiare estesa <span class="date">Dicembre 2010-marzo 2021</span></div>
-  <div class="card-title">Monserrato: aggiunta di servizio di supporto legale e piscologico alla ludopatia in aumento</div>
-  <p><img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/sostegno%20piscologico%20Covid-19%2C%20Mori.jpg" alt="Tiziana Mori - Sportello di ascolto a Monserrato" style="max-width:100%; border-radius:5px; margin-bottom:10px;"></p>
-  <p>Durante l’incontro pubblico a Monserrato, Tiziana Mori ha ribadito l’importanza della trasparenza nella gestione delle risorse pubbliche e il rilancio delle politiche familiari e sociali.</p>
-  <p>«Abbiamo il dovere di restituire dignità alle famiglie, alle associazioni e ai giovani. Serve una visione chiara, partecipata e fondata sull’empowerment delle donne e delle comunità locali.» – Tiziana Mori</p>
-  <a href="https://www.facebook.com/photo/?fbid=5851769781534776&set=pcb.5851770021534752" target="_blank">🔗 Guarda il post su Facebook</a>
-</div>
-           
-           <section class="section-box">
-  <h3>📸 Giornata INDIFESA – 11 ottobre 2019</h3>
-  <p>Sotto la mia guida, e con la collaborazione di tutta la Giunta, consiglieri comunali, dipendenti comunali, studenti e cittadini, Monserrato ha aderito alla campagna <strong>#INDIFESA</strong> di Terre Des Hommes. Una giornata di consapevolezza, colori e partecipazione per dire no alle violenze di genere e promuovere l'empowerment femminile fin dalla prima infanzia.</p>
+        <div class="article-card">
+          <h3>Bonus nidi gratuiti</h3>
+          <p>Pubblicata la graduatoria per i bonus nidi gratuiti nel Comune di Monserrato: un sostegno concreto alle famiglie.</p>
+          <a href="https://www.castedduonline.it/monserrato-ecco-la-graduatoria-sui-bonus-nidi-gratuiti/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
 
- <div class="gallery-two-columns">
-  <div class="photo-pair">
-    <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/INDIFESA%2C%20photogallery%201.jpg" alt="Indifesa 1">
-    <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Indifesa%2C%20photogallery%202.jpg" alt="Indifesa 2">
-  </div>
-  <div class="photo-pair">
-    <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Indifesa%2C%20photogallery%203.jpg" alt="Indifesa 3">
-    <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Indifesa%2C%20photogallery%204.jpg" alt="Indifesa 4">
-  </div>
-</div>
+        <div class="article-card alt">
+          <h3>Screening della popolazione</h3>
+          <p>Tamponi gratuiti e screening per la popolazione a Monserrato: tutti negativi i test effettuati nella giornata.</p>
+          <a href="https://www.castedduonline.it/monserrato-al-via-lo-screening-della-popolazione-tutti-negativi-i-tamponi-effettuati-oggi/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
 
-</section>
+        <div class="article-card">
+          <h3>Accordo PLUS21 approvato</h3>
+          <p>Monserrato: approvato in Consiglio Comunale l’accordo per l’integrazione dei servizi sociali. Voto unanime.</p>
+          <a href="https://www.castedduonline.it/monserrato-accordo-del-plus21-in-consiglio-comunale-approvazione-allunanimita/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
 
+        <div class="article-card alt">
+          <h3>Giornata INDIFESA</h3>
+          <p>Il Comune si colora di arancione per dire no alla violenza di genere e promuovere l’empowerment femminile.</p>
+          <a href="https://www.castedduonline.it/monserrato-si-colora-di-arancione-per-indifesa-cronaca-di-una-giornata-speciale/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
 
-      <div class="cta-box">
-        <a href="index.html" class="enter-btn">Torna al menù principale</a>
+        <div class="article-card">
+          <h3>Supporto a partite IVA e negozianti</h3>
+          <p>Un piano speciale per sostenere economicamente le piccole attività commerciali prive di ammortizzatori sociali.</p>
+          <a href="https://www.castedduonline.it/monserrato-un-piano-speciale-per-le-partite-iva-e-i-negozianti-aiutiamo-anche-chi-non-ha-ammortizzatori-sociali/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card alt">
+          <h3>Progetto contro il cyberbullismo</h3>
+          <p>Iniziativa di prevenzione al cyberbullismo che coinvolge diversi comuni del Cagliaritano, inclusa Monserrato.</p>
+          <a href="https://www.castedduonline.it/cyberbullismo-un-progetto-per-la-prevenzione-coinvolge-diversi-comuni-del-cagliaritano/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card">
+          <h3>Giornata del Dono</h3>
+          <p>Scuole, imprese e cittadini in campo per la bellezza del regalo. Il Comune di Monserrato partecipa con entusiasmo.</p>
+          <a href="https://www.castedduonline.it/monserrato-aderisce-alla-giornata-del-dono-scuole-imprese-e-cittadini-in-campo-per-la-bellezza-del-regalo/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card alt">
+          <h3>Progetto con Unica Radio</h3>
+          <p>Accordo tra Comune e Unica Radio per avviare un progetto innovativo che coinvolge 10 giovani.</p>
+          <a href="https://www.castedduonline.it/monserrato-ce-laccordo-tra-comune-e-unica-radio-via-a-un-progetto-per-10-giovani/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card">
+          <h3>Encomio per le forze dell’ordine</h3>
+          <p>Il Comune premia con un encomio le forze dell’ordine per l’impegno durante la pandemia.</p>
+          <a href="https://www.castedduonline.it/monserrato-encomio-speciale-per-gli-angeli-della-pandemia-premiamo-limpegno-delle-forze-dellordine/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card alt">
+          <h3>Cittadella Universitaria</h3>
+          <p>Progetto di rilancio della cittadella universitaria con il coinvolgimento del Comune di Monserrato.</p>
+          <a href="https://www.castedduonline.it/cittadella-monserrato-universita/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card">
+          <h3>Approvazione bilancio</h3>
+          <p>Il bilancio di previsione di Monserrato per 32 milioni di euro è stato approvato.</p>
+          <a href="https://www.castedduonline.it/monserrato-approvato-il-bilancio-di-previsione-per-32-milioni/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card alt">
+          <h3>Seminario contro il bullismo</h3>
+          <p>Evento formativo a Monserrato sul fenomeno del bullismo, con partecipazione scolastica e istituzionale.</p>
+          <a href="https://www.castedduonline.it/seminario-sul-fenomeno-del-bullismo-a-monserrato/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card">
+          <h3>Centro Famiglia – Avvio e attivazione</h3>
+          <p>Webinar online per operatori e famiglie per l'attivazione del Centro Famiglia di Monserrato.</p>
+          <a href="https://www.cagliaripost.com/monserrato-centro-famiglia-plus-21-webinar-on-line-per-operatori-e-docenti/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card alt">
+          <h3>REIS e Terzo Settore</h3>
+          <p>Collaborazione tra Comune e Terzo Settore per misure di contrasto alla povertà.</p>
+          <a href="https://www.cagliaripost.com/monserrato-assessorato-politiche-sociali-comunica-lapertura-delle-procedure-reis-tutti-le-opportunita-in-corso-in-collaborazione-con-il-terzo-settore/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
       </div>
     </section>
 
-    <section id="dialogo" class="section-box">
+    <section class="section-box fade-in">
+      <h2>💼 Progetti chiave e collaborazioni</h2>
+
+      <div class="article-grid">
+        <div class="article-card alt">
+          <h3>Monserrato: Welfare, coprogrammazione e bandi</h3>
+          <p>Durante il mio mandato ho promosso l’uso degli strumenti di coprogrammazione per attrarre risorse e attivare progettualità nel sociale, coinvolgendo il Terzo Settore.</p>
+          <p><strong>Rassegna stampa:</strong></p>
+          <ul>
+            <li><a href="https://www.youtg.net/canali/dai-comuni/30198-il-comune-di-monserrato-chiama-cercansi-partner-per-progetti-sul-welfare" target="_blank">YouTG – Cercansi partner</a></li>
+            <li><a href="https://www.cagliaripost.com/monserrato-lassessorato-politiche-sociali-e-famiglia-cerca-partner-progettuali-per-bandi-sul-welfare/" target="_blank">CagliariPost – Partner progettuali</a></li>
+            <li><a href="https://www.cagliaripost.com/monserrato-bando-edu-care-in-comune-due-progetti-in-co-progettazione-con-il-terzo-settore/" target="_blank">CagliariPost – Co-progettazione EduCare</a></li>
+            <li><a href="https://www.facebook.com/castedduonline/posts/4199487956752674/" target="_blank">Casteddu Online – Avviso pubblico</a></li>
+          </ul>
+          <a href="https://www.cagliaripost.com/monserrato-lassessorato-politiche-sociali-e-famiglia-cerca-partner-progettuali-per-bandi-sul-welfare/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo principale</a>
+        </div>
+
+        <div class="article-card">
+          <h3>Inclusione e progettazione sociale</h3>
+          <p>Monserrato ha partecipato a diversi bandi nazionali e regionali per favorire l’inclusione e il benessere delle persone fragili.</p>
+          <ul>
+            <li><a href="https://www.cagliaripost.com/comune-di-monserrato-riapertura-bando-includis%EF%BF%BC/" target="_blank">Riapertura bando Includis</a></li>
+            <li><a href="https://www.cagliaripost.com/monserrato-partecipazione-al-progetto-ministeriale-edu-care-in-comune/" target="_blank">Partecipazione EduCare</a></li>
+            <li><a href="https://www.castedduonline.it/assistenza-ad-anziani-e-disabili-a-monserrato-confermata-vanno-avanti-i-progetti-del-plus-21/" target="_blank">Progetti del PLUS 21</a></li>
+          </ul>
+          <a href="https://www.castedduonline.it/assistenza-ad-anziani-e-disabili-a-monserrato-confermata-vanno-avanti-i-progetti-del-plus-21/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo principale</a>
+        </div>
+
+        <div class="article-card">
+          <h3>Webinar PLUS 21</h3>
+          <p>Formazione su conflitti adolescenziali dedicata a operatori scolastici e famiglie.</p>
+          <a href="https://www.cagliaripost.com/comune-di-monserrato-plus-21-webinar-conflitti-adolescenziali/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card alt">
+          <h3>Centro Famiglia Via Monte Arqueri</h3>
+          <p>Nuovo spazio stabile per famiglie, operatori e sostegno alla genitorialità.</p>
+          <a href="https://www.latestata.it/news/monserato-apre-il-centro-famiglia/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card">
+          <h3>Bando "Mi prendo cura"</h3>
+          <p>Misura di supporto ai caregiver e disabilità grave con contributi regionali.</p>
+          <a href="https://www.castedduonline.it/monserrato-aderisce-al-bando-mi-prendo-cura-per-i-disabili-gravi/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card alt">
+          <h3>Accordo PLUS 21</h3>
+          <p>Integrazione dei servizi per famiglie e fragilità approvato all'unanimità.</p>
+          <a href="https://www.castedduonline.it/monserrato-accordo-del-plus21-in-consiglio-comunale-approvazione-allunanimita/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card">
+          <h3>Sussidi familiari</h3>
+          <p>Domande aperte per sussidi economici a sostegno delle famiglie residenti.</p>
+          <a href="https://www.latestata.it/news/in-sardegna/monserrato/monserrato-presentazione-domande-per-i-sussidi-familiari/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card alt">
+          <h3>Prevenzione tumore al seno</h3>
+          <p>Campagne di prevenzione e iniziative solidali a favore delle donne colpite da tale patologia.</p>
+          <a href="https://www.castedduonline.it/monserrato-lotta-contro-il-cancro-al-seno-il-comune-e-solidale-con-le-donne-colpite-dal-tumore/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card">
+          <h3>Cittadinanza attiva</h3>
+          <p>Progetto di coinvolgimento dei cittadini e incontri nei quartieri.</p>
+          <a href="https://www.cagliaripost.com/monserrato-tornano-gli-appuntamenti-con-il-progetto-di-cittadinanza-attiva-sardegna/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card alt">
+          <h3>Sostegno anziani non autosufficienti</h3>
+          <p>Collaborazione tra Comune, Regione e ANCI per servizi agli anziani.</p>
+          <a href="https://www.castedduonline.it/monserrato-incontro-tra-comune-anci-e-regione-per-il-sostegno-agli-anziani-non-autosufficienti/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card">
+          <h3>Eurodesk Monserrato</h3>
+          <p>Punto informativo riaperto per opportunità europee rivolte ai giovani.</p>
+          <a href="https://www.castedduonline.it/monserrato-eurtodesk/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card alt">
+          <h3>Bilancio per i cittadini</h3>
+          <p>Risorse per famiglie e trasparenza sulle misure economiche adottate.</p>
+          <a href="https://www.castedduonline.it/monserrato-soldi/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card">
+          <h3>Manifesto INDIFESA</h3>
+          <p>Aderenza del Comune alla campagna per i diritti delle bambine e ragazze.</p>
+          <a href="https://www.castedduonline.it/giornata-mondiale-delle-bambine-e-delle-ragazze-il-comune-di-monserrato-aderisce-al-manifesto-indifesa/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card alt">
+          <h3>Supporto profughi ucraini</h3>
+          <p>Equipe dedicata al ricongiungimento familiare per cittadini ucraini.</p>
+          <a href="https://www.castedduonline.it/monserrato-una-equipe-per-agevolare-i-ricongiungimenti-familiari-dei-profughi-ucraini/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card">
+          <h3>Comuni amici della famiglia</h3>
+          <p>Monserrato entra nella rete nazionale per politiche familiari inclusive.</p>
+          <a href="https://www.cagliaripost.com/monserrato-entra-nel-network-europeo-comuni-amici-famiglia/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card alt">
+          <h3>Giornata dei nonni</h3>
+          <p>Evento speciale in collaborazione con UNICEF per celebrare i nonni.</p>
+          <a href="https://www.castedduonline.it/monserrato-la-giunta-locci-organizza-un-evento-in-collaborazione-con-lunicef-per-festeggiare-i-nonni/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+
+        <div class="article-card">
+          <h3>Sportello Europa</h3>
+          <p>Riapertura dello sportello per accompagnare giovani e lavoro.</p>
+          <a href="https://www.castedduonline.it/monserrato-il-comune-lavora-in-smart-working-riapre-anche-lo-sportello-europa/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NUOVA SEZIONE AGGIUNTA -->
+    <section class="section-box section-alt fade-in">
+      <h2>🎯 Progettazione e cittadinanza attiva</h2>
+      
+      <div class="article-grid">
+        <div class="article-card">
+          <h3>Coprogettazione e cittadinanza attiva</h3>
+          <p>Progetto per il coinvolgimento diretto del territorio nelle scelte sociali del Comune.</p>
+          <a href="https://www.cagliaripost.com/comune-di-monserrato-e-cittadinanza-attiva-progetto-di-coprogettazione-sociale-e-coinvolgimento-del-territorio%ef%bf%bc/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+        
+        <div class="article-card alt">
+          <h3>Avviso regionale "Primi Passi"</h3>
+          <p>Manifestazione d'interesse per il bando dedicato ai servizi per l'infanzia e le famiglie.</p>
+          <a href="https://www.cagliaripost.com/monserrato-manifestazione-interesse-per-avviso-regionale-primi-passi/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+        
+        <div class="article-card">
+          <h3>Processione Beata Vergine</h3>
+          <p>Partecipazione compatta della Giunta tutta al femminile alla tradizionale processione.</p>
+          <a href="https://www.castedduonline.it/monserrato-la-giunta-in-rosa-sfila-compatta-tutte-le-donne-alla-processione-della-beata-vergine/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo</a>
+        </div>
+        
+        <div class="article-card alt">
+          <h3>Monserrato: supporto psicologico in tempi di Covid-19</h3>
+          <p>Iniziativa per lo stress da pandemia con sportello d'ascolto e seminario online dedicato.</p>
+          <p><strong>Rassegna stampa:</strong></p>
+          <ul>
+            <li><a href="https://www.cagliaripost.com/monserrato-seminario-on-line-sul-disagio-psicologico-da-covid-19/" target="_blank">Cagliari Post</a></li>
+            <li><a href="https://www.castedduonline.it/monserrato-attivo-un-seminario-per-gestire-stress-e-disagio-da-covid-19/" target="_blank">Casteddu Online</a></li>
+          </ul>
+          <a href="https://www.cagliaripost.com/monserrato-seminario-on-line-sul-disagio-psicologico-da-covid-19/" target="_blank"><i class="fas fa-external-link-alt"></i> Leggi l'articolo principale</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-box section-alt fade-in">
+      <h2>📸 Galleria delle iniziative</h2>
+      
+      <div class="columns">
+        <div class="col">
+          <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/CentroEurodesk.Monserrato.jpg" alt="Centro Eurodesk">
+          <p>Con me, Monserrato è diventato Centro Eurodesk e punto di riferimento in tutta la città Metropolitana di Cagliari</p>
+        </div>
+        <div class="col">
+          <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/parco%20polifunzionale%20via%20Caracalla.jpg" alt="Parco via Caracalla">
+          <p>Apertura del parco polifunzionale di via Caracalla</p>
+        </div>
+        <div class="col">
+          <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Dono%20Day%20Monserrato.jpg" alt="Dono Day">
+          <p>Evento Dono Day per famiglie in difficoltà</p>
+        </div>
+      </div>
+      
+      <div class="columns">
+        <div class="col">
+          <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/giornata%20internazionale%20contro%20la%20violenza%20sulle%20donne%202021%2C%20Monserrato.jpg" alt="Violenza contro le donne">
+          <p>Mi è sempre piaciuto collaborare e coinvolgere tutti "per metterci la faccia" soprattutto quando sono le Istituzioni a doversi impegnare per contrastare la violenza contro le donne.</p>
+        </div>
+        <div class="col">
+          <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Regalo%20in%20sospeso.jpg" alt="Regalo in sospeso">
+          <p>Evento "Regalo in sospeso - Aspettando il Santo Natale a Monserrato"</p>
+        </div>
+      </div>
+      
+      <div class="columns">
+        <div class="col">
+          <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/apertura%20Sportello%20Famiglia-Network%20Family.jpg" alt="Sportello Famiglia">
+          <p>Ingresso del Comune di Monserrato nel Network Comuni Amici della Famiglia</p>
+        </div>
+        <div class="col">
+          <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/evento%20sul%20contrasto%20al%20Bullismo.jpg" alt="Evento Bullismo">
+          <p>Evento in Monserratoteca rivolto a seminari e convegni sul Contrasto al Bullismo in collaborazione con Arka Eventi culturali</p>
+        </div>
+        <div class="col">
+          <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/celebrazione%20matrimonio.jpg" alt="Celebrazione matrimonio">
+          <p>Celebrazione matrimonio nella Sala Comunale durante l'emergenza covid-19</p>
+        </div>
+      </div>
+      
+      <div class="columns">
+        <div class="col">
+          <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/avis.monserrato.jpg" alt="Avis Monserrato">
+          <p>Iniziativa con AVIS provinciale a Monserrato</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-box fade-in">
+      <h2>🌟 Progetti speciali e campagne</h2>
+      
+      <div class="article-card alt" style="margin-bottom: 40px;">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px; margin-bottom: 20px;">
+          <div style="flex: 1 1 60%;">
+            <h3>Endometriosi: informare per non lasciare sole le donne</h3>
+            <p>Dal mondo del volontariato ho imparato – e oggi insegno ai miei studenti – che l’unione fa la forza. Con questa convinzione abbiamo portato avanti, a Monserrato, una campagna pubblica per rompere il silenzio sull’endometriosi.</p>
+            <a href="https://www.facebook.com/story.php?story_fbid=4135377636507341&id=100001054374802" target="_blank"><i class="fab fa-facebook"></i> Guarda il post completo su Facebook</a>
+          </div>
+          <div style="flex: 1 1 35%;">
+            <div class="photo-grid">
+              <div class="photo-item">
+                <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Endometriosi%20Monserrato%2C%202021.jpg" alt="Endometriosi 1">
+              </div>
+              <div class="photo-item">
+                <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/endometriosi%2C%20illuminazione%20edifici%20comunali.jpg" alt="Endometriosi 2">
+              </div>
+              <div class="photo-item">
+                <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/evento%20endometriosi.jpg" alt="Endometriosi 3">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="article-card" style="margin-bottom: 40px;">
+        <div style="display: flex; flex-wrap: wrap; align-items: center; gap: 20px;">
+          <div style="flex: 1 1 60%;">
+            <h3>Progetto "Famiglie in Pari" – Monserrato 2022</h3>
+            <p>Iniziativa promossa dall’Assessorato Politiche Sociali per affiancare famiglie fragili con famiglie solidali, nel quadro di un percorso condiviso con il Terzo Settore.</p>
+            <p>Tre incontri pubblici con la comunità e le parrocchie per promuovere l’affido leggero e le reti comunitarie familiari.</p>
+            <a href="https://www.facebook.com/photo/?fbid=2740193569359095&set=a.479215105456964" target="_blank"><i class="fab fa-facebook"></i> Guarda il post su Facebook</a>
+          </div>
+          <div style="flex: 1 1 35%;">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Progetto%20Famiglie%20in%20PARI%2C%20Assessore%20MORI.jpg" alt="Famiglie in Pari - Assessora Mori" style="width: 100%; border-radius: var(--border-radius);">
+          </div>
+        </div>
+      </div>
+      
+      <div class="article-card alt" style="margin-bottom: 40px;">
+        <h3>Attività di Sostegno alla Famiglia</h3>
+        <p>Collaborazione con AFS per Supporto psicologico in pandemia covid-19. Mediazione familiare estesa (Dicembre 2010-marzo 2021)</p>
+        <p style="font-style: italic; margin: 15px 0;">"Monserrato: aggiunta di servizio di supporto legale e psicologico alla ludopatia in aumento"</p>
+        <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/sostegno%20piscologico%20Covid-19%2C%20Mori.jpg" alt="Tiziana Mori - Sportello di ascolto a Monserrato" style="width: 100%; border-radius: var(--border-radius); margin: 15px 0;">
+        <p>Durante l’incontro pubblico a Monserrato, Tiziana Mori ha ribadito l’importanza della trasparenza nella gestione delle risorse pubbliche e il rilancio delle politiche familiari e sociali.</p>
+        <p style="font-style: italic; background: rgba(0, 51, 102, 0.05); padding: 15px; border-radius: var(--border-radius);">«Abbiamo il dovere di restituire dignità alle famiglie, alle associazioni e ai giovani. Serve una visione chiara, partecipata e fondata sull’empowerment delle donne e delle comunità locali.» – Tiziana Mori</p>
+        <a href="https://www.facebook.com/photo/?fbid=5851769781534776&set=pcb.5851770021534752" target="_blank"><i class="fab fa-facebook"></i> Guarda il post su Facebook</a>
+      </div>
+      
+      <div class="article-card">
+        <h3>📸 Giornata INDIFESA – 11 ottobre 2019</h3>
+        <p>Sotto la mia guida, e con la collaborazione di tutta la Giunta, consiglieri comunali, dipendenti comunali, studenti e cittadini, Monserrato ha aderito alla campagna <strong>#INDIFESA</strong> di Terre Des Hommes. Una giornata di consapevolezza, colori e partecipazione per dire no alle violenze di genere e promuovere l'empowerment femminile fin dalla prima infanzia.</p>
+        <div class="photo-grid">
+          <div class="photo-item">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/INDIFESA%2C%20photogallery%201.jpg" alt="Indifesa 1">
+          </div>
+          <div class="photo-item">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Indifesa%2C%20photogallery%202.jpg" alt="Indifesa 2">
+          </div>
+          <div class="photo-item">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Indifesa%2C%20photogallery%203.jpg" alt="Indifesa 3">
+          </div>
+          <div class="photo-item">
+            <img src="https://raw.githubusercontent.com/TizMori/parliamone-insieme/main/Indifesa%2C%20photogallery%204.jpg" alt="Indifesa 4">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="dialogo" class="fade-in">
       <h2>Costruiamo dialogo</h2>
       <div class="email-box">
-        <a href="mailto:contatti.parliamone.insieme@gmail.com">contatti.parliamone.insieme@gmail.com</a>
+        <a href="mailto:contatti.parliamone.insieme@gmail.com"><i class="fas fa-envelope"></i> contatti.parliamone.insieme@gmail.com</a>
       </div>
+      
+      <div class="replicable-message">
+        <p>I progetti realizzati rappresentano soluzioni innovative che possono essere adattate e implementate in altri contesti, mantenendo l'attenzione alle specificità locali e alle esigenze delle comunità.</p>
+      </div>
+      
+      <div class="cta-box" style="margin: 3rem auto; text-align: center; padding: 20px; background: linear-gradient(135deg, #003366, #8B0000); border-radius: 10px; max-width: 800px;">
+        <a href="linee-programmatiche.html" class="enter-btn" style="background-color: #FFD700; color: #003366; padding: 15px 30px; font-size: 1.2rem; border-radius: 8px; text-decoration: none; display: inline-block; transition: all 0.3s ease; font-weight: bold;">
+          Scopri le Linee Programmatiche Realizzate
+        </a>
+        <p style="color: white; margin-top: 15px; font-size: 1.1rem;">
+          Una panoramica organizzata per aree tematiche dei risultati raggiunti durante il mio mandato
+        </p>
+      </div>
+      
+      <a href="index.html" class="enter-btn">Torna al menù principale</a>
     </section>
 
-           <!-- Pulsante per la landing page delle Linee Programmatiche -->
-<div class="cta-box" style="margin: 3rem auto; text-align: center; padding: 20px; background: linear-gradient(135deg, #003366, #8B0000); border-radius: 10px; max-width: 800px;">
-  <a href="linee-programmatiche.html" class="enter-btn" style="background-color: #FFD700; color: #003366; padding: 15px 30px; font-size: 1.2rem; border-radius: 8px; text-decoration: none; display: inline-block; transition: all 0.3s ease; font-weight: bold;">
-    Scopri le Linee Programmatiche Realizzate
-  </a>
-  <p style="color: white; margin-top: 15px; font-size: 1.1rem;">
-    Una panoramica organizzata per aree tematiche dei risultati raggiunti durante il mio mandato
-  </p>
-</div>
-
-    <footer>
+    <footer class="fade-in">
       <p>© 2025 Parliamone Insieme - Tutti i diritti riservati</p>
       <p class="disclaimer">Le informazioni presenti su questa pagina sono fornite a scopo divulgativo. Non costituiscono consulenza legale o professionale.</p>
       <p class="disclaimer">Sito in aggiornamento continuo – Versione in fase di revisione</p>
+      
+      <button onclick="window.print()" class="print-btn"><i class="fas fa-file-pdf"></i> Scarica questa pagina in PDF</button>
     </footer>
   </div>
-</body>
+
   <script>
-  window.onload = function () {
-    window.scrollTo(0, 0);
-  };
-</script>
-
-  <div style="text-align: center; margin-top: 30px;">
-  <button onclick="window.print()" style="padding: 10px 20px; font-size: 1em; background-color: #003366; color: white; border: none; border-radius: 6px;">
-    📄 Scarica questa pagina in PDF
-  </button>
-</div>
-
-
+    // Animazione di scorrimento fluido per i link interni
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Funzione per stampare la pagina come PDF
+    function printPage() {
+      window.print();
+    }
+  </script>
+</body>
 </html>
