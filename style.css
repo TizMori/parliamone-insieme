@@ -259,6 +259,34 @@ footer {
     margin-right: 0.5rem;
 }
 
+/* === TWEAK 1: Ombreggiature per Profondità === */
+.profile-img {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2); 
+}
+
+.menu-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(183, 110, 121, 0.4); 
+}
+
+/* === TWEAK 2: Pulsanti Più Reattivi === */
+.enter-btn {
+    transition: all 0.3s;
+}
+
+.enter-btn:hover {
+    background: #5d6bb0; 
+    color: white;
+}
+
+/* === TWEAK 3: Sezioni con Bordi Dinamici === */
+.section-box {
+    transition: border-color 0.3s;
+}
+
+.section-box:hover {
+    border-bottom-color: #b76e79; 
+}
 /* Sezione quadro-narrativo */
 .section-box ul {
     margin-top: 1rem;
